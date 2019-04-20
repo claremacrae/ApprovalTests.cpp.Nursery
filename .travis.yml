@@ -3,13 +3,16 @@ dist: trusty
 
 language: cpp
 
+compiler:
+  - gcc
+
 script:
   - pushd third_party
   - git clone https://github.com/approvals/ApprovalTests.cpp.git
   - popd
   - mkdir .build
   - cd .build
-  - cmake -DCMAKE_CXX_COMPILER=g++-6 ..
+  - cmake ..
   - cmake --build .
   - ctest --verbose
 

@@ -11,6 +11,8 @@ add_library(${PROJECT_NAME}
     ConsoleDiffReporter.h
     ExtendApprovalTestName.cpp
     ExtendApprovalTestName.h
+    FileUtilsAdditions.cpp
+    FileUtilsAdditions.h
     FirstNFailuresReporter.cpp
     FirstNFailuresReporter.h
     ForegroundSystemLauncher.cpp

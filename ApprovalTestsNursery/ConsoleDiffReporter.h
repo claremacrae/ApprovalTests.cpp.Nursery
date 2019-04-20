@@ -12,8 +12,8 @@ private:
     ForegroundSystemLauncher launcher;
 
 public:
-    explicit ConsoleDiffReporter(const std::string& program);;
-    explicit ConsoleDiffReporter(const DiffInfo& info);;
+    explicit ConsoleDiffReporter(const std::string& program);
+    explicit ConsoleDiffReporter(const DiffInfo& info);
 };
 
 #endif //APPROVALTESTS_CPP_CONSOLEDIFFREPORTER_H

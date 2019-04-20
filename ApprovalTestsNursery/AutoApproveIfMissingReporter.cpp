@@ -1,5 +1,6 @@
 #include "AutoApproveIfMissingReporter.h"
 #include "ApprovalTests/FileUtils.h"
+#include "FileUtilsAdditions.h"
 
 #include <iostream>
 
@@ -14,7 +15,7 @@ bool AutoApproveIfMissingReporter::report(std::string received, std::string appr
     {
         // approved does not exist, move received to approved and return true
         // TODO actually move, not copy
-        FileUtils::copyFile( received, approved );
+        FileUtilsAdditions::copyFile( received, approved );
         std::cout << "file " << approved << " automatically approved - next run should succeed\n";
         return true;
     }

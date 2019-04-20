@@ -50,4 +50,3 @@ script:
   - ctest --verbose
   - env
   - cmake --version
-

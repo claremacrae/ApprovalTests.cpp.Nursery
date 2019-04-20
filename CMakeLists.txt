@@ -5,9 +5,10 @@ if(NOT DEFINED PROJECT_NAME)
     set(NOT_SUBPROJECT ON)
 endif()
 
-add_subdirectory(../ApprovalTests.cpp/ApprovalTests  build_approvals EXCLUDE_FROM_ALL)
+set(ApprovalTestsDir "third_party/ApprovalTests.cpp")
+add_subdirectory(${ApprovalTestsDir}/ApprovalTests  build_approvals EXCLUDE_FROM_ALL)
 # TODO Improve how Catch is found
-include_directories(../ApprovalTests.cpp/lib)
+include_directories(${ApprovalTestsDir}/lib)
 
 project(ApprovalTests.cpp.Nursery)
 add_subdirectory(ApprovalTestsNursery)

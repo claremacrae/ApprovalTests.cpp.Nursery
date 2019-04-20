@@ -2,12 +2,7 @@
 
 #include "ApprovalTests/reporters/QuietReporter.h"
 #include "ApprovalTests/reporters/CombinationReporter.h"
-
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wunused-function"
 #include "ApprovalTests/reporters/WindowsReporters.h"
-#pragma GCC diagnostic pop
-
 #include "ApprovalTests/reporters/ClipboardReporter.h"
 #include "AutoApproveIfMissingReporter.h"
 #include "AutoApproveReporter.h"

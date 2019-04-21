@@ -7,7 +7,7 @@ endif()
 
 set(ApprovalTestsDir "third_party/ApprovalTests.cpp")
 add_subdirectory(${ApprovalTestsDir}/ApprovalTests  build_approvals EXCLUDE_FROM_ALL)
-# TODO Improve how Catch is found
+# TODO Improve how Catch.hpp is found - ApprovalTests.cpp/ApprovalTests/Catch2Approvals.h requires a file call Catch.hpp
 include_directories(${ApprovalTestsDir}/lib)
 
 project(ApprovalTests.cpp.Nursery)

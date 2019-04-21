@@ -11,6 +11,8 @@ before_build:
 
     cmake .
 
+    cmake --version
+
 build:
   project: ApprovalTests.cpp.Nursery.sln
 

@@ -23,16 +23,16 @@ matrix:
       addons:
         apt:
           sources: *all_sources
-          packages: ['clang-5.0']
-      env: CC='clang-5.0' CXX='clang++-5.0' CXXFLAGS='-stdlib=libc++'
+          packages: ['clang-5.0', 'libstdc++-8-dev']
+      env: CC='clang-5.0' CXX='clang++-5.0'
 
     - os: linux
       compiler: clang
       addons:
         apt:
           sources: *all_sources
-          packages: ['clang-6.0']
-      env: CC='clang-6.0' CXX='clang++-6.0' CXXFLAGS='-stdlib=libc++'
+          packages: ['clang-6.0', 'libstdc++-8-dev']
+      env: CC='clang-6.0' CXX='clang++-6.0'
 
     # 2/ Linux GCC Builds
     - os: linux

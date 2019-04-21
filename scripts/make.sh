@@ -2,7 +2,7 @@
 
 cd ..
 
-# cmake first, as it's stricter
+# clang first, as it's stricter, and I don't build it on windows
 cd       cmake-clang-release
 make $*
 cd ..

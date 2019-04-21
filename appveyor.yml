@@ -1,0 +1,10 @@
+image: Visual Studio 2017
+
+before_build:
+- cmd: cmake .
+
+build:
+  project: ApprovalTests.cpp.Nursery.sln
+
+test_script:
+- cmd: ctest --verbose --parallel 4 -C Debug

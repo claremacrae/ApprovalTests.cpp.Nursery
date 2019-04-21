@@ -63,5 +63,4 @@ script:
   - cmake ..
   - cmake --build .
   - ctest --verbose
-  - env
   - cmake --version

@@ -26,6 +26,14 @@ matrix:
           packages: ['clang-5.0']
       env: CC='clang-5.0' CXX='clang++-5.0'
 
+    - os: linux
+      compiler: clang
+      addons:
+        apt:
+          sources: *all_sources
+          packages: ['clang-6.0']
+      env: CC='clang-6.0' CXX='clang++-6.0'
+
     # 2/ Linux GCC Builds
     - os: linux
       compiler: gcc
@@ -35,6 +43,13 @@ matrix:
           packages: ['g++-7']
       env: CC='gcc-7' CXX='g++-7'
 
+    - os: linux
+      compiler: gcc
+      addons: &gcc8
+        apt:
+          sources: *all_sources
+          packages: ['g++-8']
+      env: CC='gcc-8' CXX='g++-8'
 
 # See https://github.com/zie87/sdl2_cxx/blob/fa03e4fdff828284af6f0fa08f7761103ef38ab8/.travis.yml
 script:

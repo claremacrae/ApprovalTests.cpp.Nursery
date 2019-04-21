@@ -21,7 +21,7 @@ matrix:
           packages:
             - g++-7
       env:
-        - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+        - CC=gcc-7 CXX=g++-7
 
     # works on Trusty
     - os: linux
@@ -33,10 +33,7 @@ matrix:
           packages:
             - clang-5.0
       env:
-        - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
-
-before_install:
-  - eval "${MATRIX_EVAL}"
+        - CC=clang-5.0 CXX=clang++-5.0
 
 # See https://github.com/zie87/sdl2_cxx/blob/fa03e4fdff828284af6f0fa08f7761103ef38ab8/.travis.yml
 script:

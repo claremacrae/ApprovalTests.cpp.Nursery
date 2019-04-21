@@ -11,7 +11,20 @@ language: cpp
 
 matrix:
   include:
-    # works on Precise and Trusty
+
+    # 1/ Linux Clang Builds
+    - os: linux
+      compiler: clang
+      addons:
+        apt:
+          sources:
+            - llvm-toolchain-trusty-5.0
+          packages:
+            - clang-5.0
+      env:
+        - CC=clang-5.0 CXX=clang++-5.0
+
+    # 2/ Linux GCC Builds
     - os: linux
       compiler: gcc
       addons:
@@ -23,17 +36,6 @@ matrix:
       env:
         - CC=gcc-7 CXX=g++-7
 
-    # works on Trusty
-    - os: linux
-      compiler: clang
-      addons:
-        apt:
-          sources:
-            - llvm-toolchain-trusty-5.0
-          packages:
-            - clang-5.0
-      env:
-        - CC=clang-5.0 CXX=clang++-5.0
 
 # See https://github.com/zie87/sdl2_cxx/blob/fa03e4fdff828284af6f0fa08f7761103ef38ab8/.travis.yml
 script:

@@ -1,7 +1,11 @@
 image: Visual Studio 2017
 
 before_build:
-- cmd: cmake .
+- cmd: >-
+    cd third_party
+    git clone https://github.com/approvals/ApprovalTests.cpp.git
+    cd ..
+    cmake .
 
 build:
   project: ApprovalTests.cpp.Nursery.sln

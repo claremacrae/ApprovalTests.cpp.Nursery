@@ -4,7 +4,6 @@ add_executable(${PROJECT_NAME}
     main.cpp
     CatchReporterTests.cpp
     CIBuildOnlyReporterTests.cpp
-    CITests.cpp
     FileUtilsAdditionsTests.cpp
     TextDiffReporterTests.cpp
     )

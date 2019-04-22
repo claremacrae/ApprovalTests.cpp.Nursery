@@ -9,6 +9,8 @@ add_library(${PROJECT_NAME}
     AutoApproveReporter.h
     CatchReporter.cpp
     CatchReporter.h
+    CIBuildOnlyReporter.cpp
+    CIBuildOnlyReporter.h
     ConsoleDiffReporter.cpp
     ConsoleDiffReporter.h
     ExtendApprovalTestName.cpp
@@ -21,6 +23,8 @@ add_library(${PROJECT_NAME}
     ForegroundSystemLauncher.h
     ParallelFilesTestNamer.cpp
     ParallelFilesTestNamer.h
+    TextDiffReporter.cpp
+    TextDiffReporter.h
     )
 
 target_include_directories(${PROJECT_NAME} PUBLIC .)

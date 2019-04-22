@@ -18,13 +18,13 @@ matrix:
   include:
 
     # 1/ Linux Clang Builds
-    - os: linux
-      compiler: clang
-      addons:
-        apt:
-          sources: *all_sources
-          packages: ['clang-5.0', 'libstdc++-8-dev']
-      env: CC='clang-5.0' CXX='clang++-5.0'
+#    - os: linux
+#      compiler: clang
+#      addons:
+#        apt:
+#          sources: *all_sources
+#          packages: ['clang-5.0', 'libstdc++-8-dev']
+#      env: CC='clang-5.0' CXX='clang++-5.0'
 
     - os: linux
       compiler: clang
@@ -35,13 +35,13 @@ matrix:
       env: CC='clang-6.0' CXX='clang++-6.0'
 
     # 2/ Linux GCC Builds
-    - os: linux
-      compiler: gcc
-      addons:
-        apt:
-          sources: *all_sources
-          packages: ['g++-7']
-      env: CC='gcc-7' CXX='g++-7'
+#    - os: linux
+#      compiler: gcc
+#      addons:
+#        apt:
+#          sources: *all_sources
+#          packages: ['g++-7']
+#      env: CC='gcc-7' CXX='g++-7'
 
     - os: linux
       compiler: gcc

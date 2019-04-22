@@ -21,6 +21,7 @@ add_library(${PROJECT_NAME}
     ParallelFilesTestNamer.h
     )
 
+target_include_directories(${PROJECT_NAME} PUBLIC .)
 target_link_libraries(${PROJECT_NAME} ApprovalTests)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")

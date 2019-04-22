@@ -7,6 +7,7 @@
 // Based on SystemLauncher, and differs in that it runs the command in
 // the foreground instead of the background, so that any text output is
 // interleaved in with the output from the test framework.
+// This is an implementation detail of ConsoleDiffReporter, mainly.
 class ForegroundSystemLauncher : public CommandLauncher
 {
 public:

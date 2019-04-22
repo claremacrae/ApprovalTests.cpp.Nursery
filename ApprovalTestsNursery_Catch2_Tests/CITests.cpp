@@ -19,9 +19,10 @@ TEST_CASE("Fail with ApprovalMissingException")
         // - do they block? 
         // - Is there meaningful output?
     }
-    catch(const ApprovalMissingException&)
+    catch(const ApprovalMissingException& e)
     {
         // We intend to arrive here
+        std::cout << "\n\n" << e.what() << "\n\n";
 
         // Re-delete auto-created Approved File, so it doesn't get checked
         // in to git
@@ -35,8 +36,9 @@ TEST_CASE("Fail with ApprovalMismatchException")
     {
         Approvals::verify("I will fail - do not approve me");
     }
-    catch(const ApprovalMismatchException&)
+    catch(const ApprovalMismatchException& e)
     {
+        std::cout << "\n\n" << e.what() << "\n\n";
         // We intend to arrive here
     }
 }

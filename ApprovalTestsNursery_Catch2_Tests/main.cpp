@@ -4,7 +4,7 @@
 #define APPROVALS_CATCH
 #include "ApprovalTests/Catch2Approvals.h"
 #include "ApprovalTests/Approvals.h"
-#include "ApprovalTests/reporters/QuietReporter.h"
+#include "ApprovalTests/reporters/DiffReporter.h"
 #include "CIBuildOnlyReporter.h"
 #include "TextDiffReporter.h"
 
@@ -17,8 +17,9 @@ auto reporterForCIDisposer =
         std::make_shared<CIBuildOnlyReporter>(
             std::make_shared<TextDiffReporter>() ) );
 
-// Otherwise, for developer builds, use QuietReporter, because we have some
-// tests that deliberately report failures.
+// Demonstrate how to set a default reporter for tests on non-CI machines.
+// (in fact, DiffReporter is the default anyway, so this doesn't actually
+// change the behaviour)
 auto interactiveReporterDisposer =
     Approvals::useAsDefaultReporter (
-        std::make_shared<QuietReporter>() );
+        std::make_shared<DiffReporter>() );

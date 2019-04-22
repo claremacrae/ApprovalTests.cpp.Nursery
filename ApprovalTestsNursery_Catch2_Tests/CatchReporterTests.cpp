@@ -5,11 +5,14 @@
 
 TEST_CASE("CatchReporter logs failure", "[!shouldfail]")
 {
-    CatchReporter reporter;
+    // Force this reporter to be used, by overriding any existing
+    // front-loaded-reporter:
+    auto reporter = std::make_shared<CatchReporter>();
+    auto disposer = Approvals::useAsFrontLoadedReporter( reporter );
 
     try
     {
-       Approvals::verify("This test is expected to fail", reporter);
+       Approvals::verify("Test CatchReporter - CatchReporter will report 'Failure', but this test will pass");
     }
     catch(const ApprovalException&)
     {

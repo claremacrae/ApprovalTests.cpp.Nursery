@@ -16,5 +16,11 @@ bool TextDiffReporter::report(std::string received, std::string approved) const
     std::cout << "Comparing files:" << std::endl;
     std::cout << "received: " << received << std::endl;
     std::cout << "approved: " << approved << std::endl;
-    return m_reporter->report(received, approved);
+    const bool result = m_reporter->report(received, approved);
+    if ( ! result )
+    {
+        std::cout << "TextDiffReporter did not find a working diff program\n\n";
+    }
+        
+    return result;
 }

@@ -2,7 +2,6 @@
 #include "ApprovalTests/SystemUtils.h"
 
 #include <vector>
-#include <iostream>
 
 CIBuildOnlyReporter::CIBuildOnlyReporter(std::shared_ptr<Reporter> reporter) : m_reporter(reporter)
 {
@@ -36,10 +35,8 @@ bool CIBuildOnlyReporter::isRunningUnderCI() const
     std::vector<std::string> environmentVariablesForCI = { "CI", "TEAMCITY_VERSION" };
     for ( const auto& variable : environmentVariablesForCI )
     {
-        std::cout << "Checking variable " << variable << '\n';
         if ( ! SystemUtils::safeGetEnv(variable.c_str()).empty() )
         {
-            std::cout << "Found variable " << variable << '\n';
             return true;
         }
     }

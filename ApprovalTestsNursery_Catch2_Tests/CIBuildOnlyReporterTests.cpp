@@ -16,7 +16,6 @@ TEST_CASE("CIBuildOnlyReporter reports correctly")
     CIBuildOnlyReporter reporter( fakeReporter );
 
     auto machineName = SystemUtils::getMachineName();
-    std::cout << "Machine name is " << machineName << '\n';
     if (machineName == "CLARESPC" )
     {
         REQUIRE(! reporter.isRunningUnderCI());

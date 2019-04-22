@@ -23,10 +23,9 @@ TEST_CASE("Fail with ApprovalMissingException")
         // So neither blocks
         // However, they don't write out what the differences are.
     }
-    catch(const ApprovalMissingException& e)
+    catch(const ApprovalMissingException&)
     {
         // We intend to arrive here
-        std::cout << "\n\n" << e.what() << "\n\n";
 
         // Re-delete auto-created Approved File, so it doesn't get checked
         // in to git
@@ -44,9 +43,8 @@ TEST_CASE("Fail with ApprovalMismatchException")
     {
         Approvals::verify("I will fail - do not approve me");
     }
-    catch(const ApprovalMismatchException& e)
+    catch(const ApprovalMismatchException&)
     {
-        std::cout << "\n\n" << e.what() << "\n\n";
         // We intend to arrive here
     }
 }

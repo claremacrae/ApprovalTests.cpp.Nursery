@@ -1,18 +1,14 @@
 #include "TextDiffReporter.h"
-#include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/namers/ApprovalTestNamer.h"
 
 #include "Catch.hpp"
 
-TEST_CASE("TextDiffReporter writes output to console")
+TEST_CASE("TextDiffReporter finds a differencing tool")
 {
-    auto disposer = Approvals::useAsFrontLoadedReporter( std::make_shared<TextDiffReporter>() );
-    try
-    {
-        // Test that we get text written to the console
-        Approvals::verify("Test TextDiffReporter - Hello world");
-    }
-    catch(const ApprovalMismatchException&)
-    {
-        // We intend to arrive here
-    }
+    ApprovalTestNamer namer;
+    const auto directory = namer.getDirectory();
+    const std::string inputFile = directory + "sample_file.txt";
+
+    TextDiffReporter reporter;
+    REQUIRE(reporter.report(inputFile, inputFile));
 }

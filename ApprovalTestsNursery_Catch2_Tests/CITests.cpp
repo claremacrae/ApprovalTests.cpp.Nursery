@@ -1,11 +1,15 @@
 #include "Catch.hpp"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/namers/ApprovalNamer.h"
+#include "ApprovalTests/reporters/QuietReporter.h"
 
 #include <cstdio>
 
 TEST_CASE("Fail with ApprovalMissingException")
 {
+    // For now, don't pop up a GUI reporter, as this is getting
+    // pretty irritating on my PC, whilst running other tests
+    auto disposer = Approvals::useAsDefaultReporter( std::make_shared<QuietReporter>());
     auto namer = Approvals::getDefaultNamer();
 
     // Delete auto-created Approved File, in case left over from previous run
@@ -32,6 +36,10 @@ TEST_CASE("Fail with ApprovalMissingException")
 
 TEST_CASE("Fail with ApprovalMismatchException")
 {
+    // For now, don't pop up a GUI reporter, as this is getting
+    // pretty irritating on my PC, whilst running other tests
+    auto disposer = Approvals::useAsDefaultReporter( std::make_shared<QuietReporter>());
+
     try
     {
         Approvals::verify("I will fail - do not approve me");

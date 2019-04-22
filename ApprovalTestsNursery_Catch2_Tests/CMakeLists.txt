@@ -2,6 +2,7 @@ project(ApprovalTestsNursery_Catch2_Tests)
 set(CMAKE_CXX_STANDARD 17)
 add_executable(${PROJECT_NAME}
     main.cpp
+    CatchReporterTests.cpp
     CITests.cpp
     FileUtilsAdditionsTests.cpp
     )

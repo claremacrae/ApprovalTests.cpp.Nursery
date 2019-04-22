@@ -7,6 +7,8 @@ add_library(${PROJECT_NAME}
     AutoApproveIfMissingReporter.h
     AutoApproveReporter.cpp
     AutoApproveReporter.h
+    CatchReporter.cpp
+    CatchReporter.h
     ConsoleDiffReporter.cpp
     ConsoleDiffReporter.h
     ExtendApprovalTestName.cpp

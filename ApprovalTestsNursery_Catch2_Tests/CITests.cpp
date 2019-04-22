@@ -15,9 +15,9 @@ TEST_CASE("Fail with ApprovalMissingException")
     try
     {
         Approvals::verify("Do not approve me - approved file must not exist");
-        // See what behaviour is in Travis and Appveyor 
-        // - do they block? 
-        // - Is there meaningful output?
+        // In Travis and Appveyor, neither finds a diffing tool
+        // So neither blocks
+        // However, they don't write out what the differences are.
     }
     catch(const ApprovalMissingException& e)
     {

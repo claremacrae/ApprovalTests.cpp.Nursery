@@ -6,7 +6,7 @@
 
 #include <iostream>
 
-TEST_CASE("It reads text correctly")
+TEST_CASE("It reads sample_file.txt correctly")
 {
     ApprovalTestNamer namer;
     const auto directory = namer.getDirectory();

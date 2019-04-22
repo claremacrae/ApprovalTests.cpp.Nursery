@@ -6,3 +6,5 @@
 #include "ApprovalTests/Approvals.h"
 
 auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
+
+// TODO If it's a CI build, don't allow GUI applications to pop up.

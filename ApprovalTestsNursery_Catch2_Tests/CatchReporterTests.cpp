@@ -11,7 +11,7 @@ TEST_CASE("CatchReporter logs failure", "[!shouldfail]")
     {
        Approvals::verify("This test is expected to fail", reporter);
     }
-    catch(const ApprovalException& e)
+    catch(const ApprovalException&)
     {
         // We intend to arrive here
         SUCCEED("CatchReporter reported a failure, as intended");

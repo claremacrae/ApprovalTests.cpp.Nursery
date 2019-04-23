@@ -10,8 +10,7 @@
 
 auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
 
-// If it's a CI machine
-//      use ConsoleDiffReporter - with 'C:\Windows\System32\fc.exe' or 'diff'
+// If it's a CI machine, show differences as text in the console/log
 auto reporterForCIDisposer = 
     Approvals::useAsFrontLoadedReporter (
         std::make_shared<CIBuildOnlyReporter>(

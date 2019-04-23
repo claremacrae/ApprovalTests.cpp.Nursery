@@ -1,30 +1,30 @@
 project(ApprovalTestsNursery)
 set(CMAKE_CXX_STANDARD 11)
 add_library(${PROJECT_NAME}
-    ApprovalTestReporters.cpp
-    ApprovalTestReporters.h
-    AutoApproveIfMissingReporter.cpp
-    AutoApproveIfMissingReporter.h
-    AutoApproveReporter.cpp
-    AutoApproveReporter.h
-    CatchReporter.cpp
-    CatchReporter.h
-    CIBuildOnlyReporter.cpp
-    CIBuildOnlyReporter.h
-    ConsoleDiffReporter.cpp
-    ConsoleDiffReporter.h
+    reporters/ApprovalTestReporters.cpp
+    reporters/ApprovalTestReporters.h
+    reporters/AutoApproveIfMissingReporter.cpp
+    reporters/AutoApproveIfMissingReporter.h
+    reporters/AutoApproveReporter.cpp
+    reporters/AutoApproveReporter.h
+    reporters/CatchReporter.cpp
+    reporters/CatchReporter.h
+    reporters/CIBuildOnlyReporter.cpp
+    reporters/CIBuildOnlyReporter.h
+    reporters/ConsoleDiffReporter.cpp
+    reporters/ConsoleDiffReporter.h
     ExtendApprovalTestName.cpp
     ExtendApprovalTestName.h
     FileUtilsAdditions.cpp
     FileUtilsAdditions.h
-    FirstNFailuresReporter.cpp
-    FirstNFailuresReporter.h
+    reporters/FirstNFailuresReporter.cpp
+    reporters/FirstNFailuresReporter.h
     ForegroundSystemLauncher.cpp
     ForegroundSystemLauncher.h
-    ParallelFilesTestNamer.cpp
-    ParallelFilesTestNamer.h
-    TextDiffReporter.cpp
-    TextDiffReporter.h
+    reporters/ParallelFilesTestNamer.cpp
+    reporters/ParallelFilesTestNamer.h
+    reporters/TextDiffReporter.cpp
+    reporters/TextDiffReporter.h
     )
 
 target_include_directories(${PROJECT_NAME} PUBLIC .)

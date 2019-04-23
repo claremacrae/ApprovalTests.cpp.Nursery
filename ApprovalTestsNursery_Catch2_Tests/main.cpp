@@ -5,8 +5,8 @@
 #include "ApprovalTests/Catch2Approvals.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/reporters/DiffReporter.h"
-#include "CIBuildOnlyReporter.h"
-#include "TextDiffReporter.h"
+#include "reporters/CIBuildOnlyReporter.h"
+#include "reporters/TextDiffReporter.h"
 
 auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
 

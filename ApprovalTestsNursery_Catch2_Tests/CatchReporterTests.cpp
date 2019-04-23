@@ -1,4 +1,4 @@
-#include "CatchReporter.h"
+#include "reporters/CatchReporter.h"
 #include "ApprovalTests/Approvals.h"
 
 #include "Catch.hpp"

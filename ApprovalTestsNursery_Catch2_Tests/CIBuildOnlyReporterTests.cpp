@@ -1,4 +1,4 @@
-#include "CIBuildOnlyReporter.h"
+#include "reporters/CIBuildOnlyReporter.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/reporters/QuietReporter.h"
 #include "ApprovalTests/SystemUtils.h"

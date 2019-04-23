@@ -13,16 +13,16 @@ add_library(${PROJECT_NAME}
     reporters/CIBuildOnlyReporter.h
     reporters/ConsoleDiffReporter.cpp
     reporters/ConsoleDiffReporter.h
-    ExtendApprovalTestName.cpp
-    ExtendApprovalTestName.h
+    namers/ExtendApprovalTestName.cpp
+    namers/ExtendApprovalTestName.h
     FileUtilsAdditions.cpp
     FileUtilsAdditions.h
     reporters/FirstNFailuresReporter.cpp
     reporters/FirstNFailuresReporter.h
     ForegroundSystemLauncher.cpp
     ForegroundSystemLauncher.h
-    reporters/ParallelFilesTestNamer.cpp
-    reporters/ParallelFilesTestNamer.h
+    namers/ParallelFilesTestNamer.cpp
+    namers/ParallelFilesTestNamer.h
     reporters/TextDiffReporter.cpp
     reporters/TextDiffReporter.h
     )

@@ -4,8 +4,8 @@
 #include "ApprovalTests/reporters/CombinationReporter.h"
 #include "ApprovalTests/reporters/WindowsReporters.h"
 #include "ApprovalTests/reporters/ClipboardReporter.h"
-#include "AutoApproveIfMissingReporter.h"
-#include "AutoApproveReporter.h"
+#include "ApprovalTests/reporters/AutoApproveIfMissingReporter.h"
+#include "ApprovalTests/reporters/AutoApproveReporter.h"
 #include "FirstNFailuresReporter.h"
 
 #include <memory>

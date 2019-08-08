@@ -4,7 +4,7 @@
 #include <string>
 #include "PairUtilities.h"
 #include "CombinationApprovalsNew.h"
-#include "reporters/FakeReporter.h"
+#include "DuplicateFakeReporter.h"
 #include "CombinationTestHelpers.h"
 
 TEST_CASE("YouCanVerifyCombinationsNewOf1") {
@@ -20,20 +20,20 @@ TEST_CASE("YouCanVerifyCombinationsNewOf1WithTemplateParameters") {
 TEST_CASE("YouCanVerifyCombinationsNewOf1Reports") {
     std::cout << "YouCanVerifyCombinationsNewOf1Reports entered\n";
     std::vector<std::string> words{"hello", "world"};
-    FakeReporter reporter;
+    DuplicateFakeReporter reporter;
     std::cout << std::boolalpha;
-    std::cout << "FakeReporter created: " << reporter.called << '\n';
+    std::cout << "DuplicateFakeReporter created: " << reporter.called << '\n';
     try
     {
         CombinationApprovalsNew::verifyAllCombinations( [](std::string s){return s + "!";}, words, reporter);
-        std::cout << "FakeReporter verify - should never reach here: " << reporter.called << '\n';
+        std::cout << "DuplicateFakeReporter verify - should never reach here: " << reporter.called << '\n';
     }
     catch(const ApprovalException& e)
     {
         // ignore
         std::cout << "In catch: " << e.what() << '\n';
     }
-    std::cout << "FakeReporter after try/catch: " << reporter.called << '\n';
+    std::cout << "DuplicateFakeReporter after try/catch: " << reporter.called << '\n';
     REQUIRE(reporter.called == true);
 }
 

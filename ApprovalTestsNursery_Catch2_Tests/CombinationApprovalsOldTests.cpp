@@ -4,7 +4,7 @@
 #include <string>
 #include "PairUtilities.h"
 #include "CombinationApprovalsOld.h"
-#include "reporters/FakeReporter.h"
+#include "DuplicateFakeReporter.h"
 #include "CombinationTestHelpers.h"
 
 TEST_CASE("YouCanVerifyCombinationsOf1") {
@@ -19,7 +19,7 @@ TEST_CASE("YouCanVerifyCombinationsOf1WithTemplateParameters") {
 
 TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
     std::vector<std::string> words{"hello", "world"};
-    FakeReporter reporter;
+    DuplicateFakeReporter reporter;
     try
     {
         CombinationApprovalsOld::verifyAllCombinations( [](std::string s){return s + "!";}, words, reporter);

@@ -22,6 +22,7 @@ add_library(${PROJECT_NAME}
     reporters/TextDiffReporter.cpp
     reporters/TextDiffReporter.h
     CombinationApprovalsOld.h
+    CombinationApprovalsNew.h
     )
 
 # TODO Improve how Catch.hpp is found - ApprovalTests.cpp/ApprovalTests/Catch2Approvals.h requires a file call Catch.hpp

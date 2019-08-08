@@ -7,6 +7,7 @@ add_executable(${PROJECT_NAME}
     FileUtilsAdditionsTests.cpp
     TextDiffReporterTests.cpp
     CombinationApprovalsOldTests.cpp
+    CombinationApprovalsNewTests.cpp
     CombinationTestHelpers.cpp
     CombinationTestHelpers.h
     )

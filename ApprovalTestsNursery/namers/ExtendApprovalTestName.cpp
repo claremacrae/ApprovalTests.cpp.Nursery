@@ -1,9 +1,5 @@
 #include "ExtendApprovalTestName.h"
 
-namespace
-{
-}
-
 ExtendApprovalTestName::ExtendApprovalTestName(TestName& currentTest, const std::string& scope_name):
 currentTest(currentTest)
 {

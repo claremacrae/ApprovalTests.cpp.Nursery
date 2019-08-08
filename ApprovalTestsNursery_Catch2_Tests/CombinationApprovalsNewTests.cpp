@@ -20,21 +20,17 @@ TEST_CASE("YouCanVerifyCombinationsNewOf1WithTemplateParameters") {
 TEST_CASE("YouCanVerifyCombinationsNewOf1Reports") {
     std::cout << "YouCanVerifyCombinationsNewOf1Reports entered\n";
     std::vector<std::string> words{"hello", "world"};
-    DuplicateFakeReporter reporter;
-    std::cout << std::boolalpha;
-    std::cout << "DuplicateFakeReporter created: " << reporter.called << '\n';
+    auto reporter = std::make_shared<DuplicateFakeReporter>(); 
+    auto frontLoadReporter = Approvals::useAsFrontLoadedReporter(reporter);
     try
     {
-        CombinationApprovalsNew::verifyAllCombinations( [](std::string s){return s + "!";}, words, reporter);
-        std::cout << "DuplicateFakeReporter verify - should never reach here: " << reporter.called << '\n';
+        CombinationApprovalsNew::verifyAllCombinations( [](std::string s){return s + "!";}, words);
     }
     catch(const ApprovalException& e)
     {
         // ignore
-        std::cout << "In catch: " << e.what() << '\n';
     }
-    std::cout << "DuplicateFakeReporter after try/catch: " << reporter.called << '\n';
-    REQUIRE(reporter.called == true);
+    REQUIRE(reporter->called == true);
 }
 
 // begin-snippet: YouCanVerifyCombinationsNewOf2

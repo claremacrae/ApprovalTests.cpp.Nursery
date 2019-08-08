@@ -19,16 +19,17 @@ TEST_CASE("YouCanVerifyCombinationsOf1WithTemplateParameters") {
 
 TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
     std::vector<std::string> words{"hello", "world"};
-    DuplicateFakeReporter reporter;
+    auto reporter = std::make_shared<DuplicateFakeReporter>(); 
+    auto frontLoadReporter = Approvals::useAsFrontLoadedReporter(reporter);
     try
     {
-        CombinationApprovalsOld::verifyAllCombinations( [](std::string s){return s + "!";}, words, reporter);
+        CombinationApprovalsOld::verifyAllCombinations( [](std::string s){return s + "!";}, words);
     }
     catch(const ApprovalException&)
     {
         // ignore
     }
-    REQUIRE(reporter.called == true);
+    REQUIRE(reporter->called == true);
 }
 
 // begin-snippet: YouCanVerifyCombinationsOf2

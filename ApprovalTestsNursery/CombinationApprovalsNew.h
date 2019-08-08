@@ -10,6 +10,13 @@
 
 #include "CombinationApprovals.h" // For Empty
 
+// TODO Can I use variadic templates to simplify code
+// TODO Can I reduce copying - read up on rvalue references
+// TODO Review Jonathan's ranges cartesian_product.hpp
+// TODO Understand if it's always valid to pass function as template type?
+// TODO If not variadic, bump back up to 9 arguments
+// TODO Can I combine this with the old code, which requires template types
+
 class CombinationApprovalsNew
 {
 public:

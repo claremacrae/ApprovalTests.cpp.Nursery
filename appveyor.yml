@@ -13,8 +13,6 @@ environment:
 #    - more_travis_builds
 
 before_build:
-- cmd: cmake -G %GENERATOR% .
-
 - cmd: >-
 
     git submodule update --init --recursive

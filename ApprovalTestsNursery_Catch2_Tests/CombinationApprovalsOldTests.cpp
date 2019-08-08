@@ -42,6 +42,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2") {
 }
 // end-snippet
 
+#if 0
 TEST_CASE("YouCanVerifyCombinationsOf9") {
     std::vector<std::string> letters{"a", "b"};
     CombinationApprovalsOld::verifyAllCombinations<
@@ -65,4 +66,18 @@ TEST_CASE("YouCanVerifyCombinationsOf9") {
             std::string s8,
             std::string s9)
                               {return s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9;}, letters, letters, letters, letters, letters, letters, letters, letters, letters);
+}
+#endif
+
+TEST_CASE("YouCanVerifyCombinationsOf3") {
+    std::vector<std::string> letters{"a", "b"};
+    CombinationApprovalsOld::verifyAllCombinations<
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::string>( [](
+            std::string s1,
+            std::string s2,
+            std::string s3)
+                              {return s1 + s2 + s3;}, letters, letters, letters);
 }

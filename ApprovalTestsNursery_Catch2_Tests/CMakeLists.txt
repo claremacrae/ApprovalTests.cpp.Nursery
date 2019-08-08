@@ -9,7 +9,7 @@ add_executable(${PROJECT_NAME}
     CombinationApprovalsOldTests.cpp
     )
 target_include_directories(${PROJECT_NAME} PUBLIC ../third_party/ApprovalTests.cpp/ApprovalTests_Catch2_Tests)
-target_link_libraries(${PROJECT_NAME} ApprovalTests ApprovalTestsNursery)
+target_link_libraries(${PROJECT_NAME} ApprovalTestsNursery)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")

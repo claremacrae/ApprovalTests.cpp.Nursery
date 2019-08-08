@@ -6,7 +6,9 @@ add_executable(${PROJECT_NAME}
     CIBuildOnlyReporterTests.cpp
     FileUtilsAdditionsTests.cpp
     TextDiffReporterTests.cpp
+    CombinationApprovalsOldTests.cpp
     )
+target_include_directories(${PROJECT_NAME} PUBLIC ../third_party/ApprovalTests.cpp/ApprovalTests_Catch2_Tests)
 target_link_libraries(${PROJECT_NAME} ApprovalTests ApprovalTestsNursery)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 

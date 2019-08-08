@@ -21,6 +21,7 @@ add_library(${PROJECT_NAME}
     namers/ParallelFilesTestNamer.h
     reporters/TextDiffReporter.cpp
     reporters/TextDiffReporter.h
+    CombinationApprovalsOld.h
     )
 
 target_include_directories(${PROJECT_NAME} PUBLIC .)

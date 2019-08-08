@@ -17,19 +17,19 @@ TEST_CASE("YouCanVerifyCombinationsNewOf1WithTemplateParameters") {
     CombinationApprovalsNew::verifyAllCombinations<std::vector<std::string>, std::string>( [](std::string s){return s + "!";}, words);
 }
 
-//TEST_CASE("YouCanVerifyCombinationsNewOf1Reports") {
-//    std::vector<std::string> words{"hello", "world"};
-//    FakeReporter reporter;
-//    try
-//    {
-//        CombinationApprovalsNew::verifyAllCombinations( [](std::string s){return s + "!";}, words, reporter);
-//    }
-//    catch(const ApprovalException&)
-//    {
-//        // ignore
-//    }
-//    REQUIRE(reporter.called == true);
-//}
+TEST_CASE("YouCanVerifyCombinationsNewOf1Reports") {
+    std::vector<std::string> words{"hello", "world"};
+    FakeReporter reporter;
+    try
+    {
+        CombinationApprovalsNew::verifyAllCombinations( [](std::string s){return s + "!";}, words, reporter);
+    }
+    catch(const ApprovalException&)
+    {
+        // ignore
+    }
+    REQUIRE(reporter.called == true);
+}
 
 // begin-snippet: YouCanVerifyCombinationsNewOf2
 TEST_CASE("YouCanVerifyCombinationsNewOf2") {

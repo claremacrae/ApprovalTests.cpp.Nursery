@@ -1,5 +1,5 @@
 project(ApprovalTestsNursery_Catch2_Tests)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 add_executable(${PROJECT_NAME}
     main.cpp
     CatchReporterTests.cpp

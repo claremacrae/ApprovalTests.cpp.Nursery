@@ -69,8 +69,25 @@ TEST_CASE("YouCanVerifyCombinationsOf9") {
 }
 #endif
 
-TEST_CASE("YouCanVerifyCombinationsOf3") {
-    std::vector<std::string> letters{"a", "b"};
+TEST_CASE("CombinationOf1WithLambda") {
+    CombinationApprovalsOld::verifyAllCombinations<
+            std::vector<std::string>,
+            std::string>( [](
+            std::string s1)
+                              {return s1;}, {"a"});
+}
+
+TEST_CASE("CombinationOf2WithLambda") {
+    CombinationApprovalsOld::verifyAllCombinations<
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::string>( [](
+            std::string s1,
+            std::string s2)
+                              {return s1 + s2;}, {"a"}, {"b"});
+}
+
+TEST_CASE("CombinationOf3WithLambda") {
     CombinationApprovalsOld::verifyAllCombinations<
             std::vector<std::string>,
             std::vector<std::string>,
@@ -79,5 +96,5 @@ TEST_CASE("YouCanVerifyCombinationsOf3") {
             std::string s1,
             std::string s2,
             std::string s3)
-                              {return s1 + s2 + s3;}, letters, letters, letters);
+                              {return s1 + s2 + s3;}, {"a"}, {"b"}, {"c"});
 }

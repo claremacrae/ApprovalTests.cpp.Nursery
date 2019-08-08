@@ -4,7 +4,7 @@
 #include <string>
 #include "PairUtilities.h"
 #include "CombinationApprovalsOld.h"
-#include "DuplicateFakeReporter.h"
+#include <reporters/FakeReporter.h>
 #include "CombinationTestHelpers.h"
 
 TEST_CASE("YouCanVerifyCombinationsOf1") {
@@ -19,7 +19,7 @@ TEST_CASE("YouCanVerifyCombinationsOf1WithTemplateParameters") {
 
 TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
     std::vector<std::string> words{"hello", "world"};
-    auto reporter = std::make_shared<DuplicateFakeReporter>(); 
+    auto reporter = std::make_shared<FakeReporter>(); 
     auto frontLoadReporter = Approvals::useAsFrontLoadedReporter(reporter);
     try
     {

@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_PARALLELFILESTESTNAMER_H
 #define APPROVALTESTS_CPP_PARALLELFILESTESTNAMER_H
 
-#include "ApprovalTests/namers/ApprovalTestNamer.h"
+#include "namers/ApprovalTestNamer.h"
 
 /*! \brief Modified ApprovalTestNamer implementation that allows an entire directory of
 approved and received files to be compared, using a directory-comparison tool.

@@ -4,9 +4,9 @@
 #include <functional>
 #include <vector>
 #include <ostream>
-#include "ApprovalTests/reporters/DefaultReporter.h"
-#include "ApprovalTests/reporters/Reporter.h"
-#include "ApprovalTests/Approvals.h"
+#include "reporters/DefaultReporter.h"
+#include "reporters/Reporter.h"
+#include "Approvals.h"
 
 class Empty
 {

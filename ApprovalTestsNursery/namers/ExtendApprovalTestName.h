@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_EXTENDAPPROVALTESTNAME_H
 #define APPROVALTESTS_CPP_EXTENDAPPROVALTESTNAME_H
 
-#include "ApprovalTests/namers/ApprovalTestNamer.h"
+#include "namers/ApprovalTestNamer.h"
 
 // TODO Move to approvals
 class ExtendApprovalTestName

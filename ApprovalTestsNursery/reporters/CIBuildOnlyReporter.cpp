@@ -1,5 +1,5 @@
 #include "CIBuildOnlyReporter.h"
-#include "ApprovalTests/SystemUtils.h"
+#include "SystemUtils.h"
 
 #include <vector>
 

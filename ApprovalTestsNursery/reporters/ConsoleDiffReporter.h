@@ -1,8 +1,8 @@
 #ifndef APPROVALTESTS_CPP_CONSOLEDIFFREPORTER_H
 #define APPROVALTESTS_CPP_CONSOLEDIFFREPORTER_H
 
-#include "ApprovalTests/reporters/CommandReporter.h"
-#include "ApprovalTests/reporters/DiffInfo.h"
+#include "reporters/CommandReporter.h"
+#include "reporters/DiffInfo.h"
 
 #include "ForegroundSystemLauncher.h"
 

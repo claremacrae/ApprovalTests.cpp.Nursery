@@ -1,6 +1,6 @@
 #include "TextDiffReporter.h"
 #include "ConsoleDiffReporter.h"
-#include "ApprovalTests/reporters/FirstWorkingReporter.h"
+#include "reporters/FirstWorkingReporter.h"
 
 TextDiffReporter::TextDiffReporter()
 {

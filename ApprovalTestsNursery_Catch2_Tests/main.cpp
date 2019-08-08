@@ -2,9 +2,9 @@
 // ReSharper disable once CppUnusedIncludeDirective
 
 #define APPROVALS_CATCH
-#include "ApprovalTests/Catch2Approvals.h"
-#include "ApprovalTests/Approvals.h"
-#include "ApprovalTests/reporters/DiffReporter.h"
+#include "Catch2Approvals.h"
+#include "Approvals.h"
+#include "reporters/DiffReporter.h"
 #include "reporters/CIBuildOnlyReporter.h"
 #include "reporters/TextDiffReporter.h"
 

@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_FIRSTNFAILURESREPORTER_H
 #define APPROVALTESTS_CPP_FIRSTNFAILURESREPORTER_H
 
-#include "ApprovalTests/reporters/Reporter.h"
+#include "reporters/Reporter.h"
 
 #include <memory>
 

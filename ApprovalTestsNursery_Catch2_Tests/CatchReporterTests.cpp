@@ -1,5 +1,5 @@
 #include "reporters/CatchReporter.h"
-#include "ApprovalTests/Approvals.h"
+#include "Approvals.h"
 
 #include "Catch.hpp"
 

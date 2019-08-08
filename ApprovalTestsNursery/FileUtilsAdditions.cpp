@@ -1,5 +1,5 @@
 #include "FileUtilsAdditions.h"
-#include "ApprovalTests/FileUtils.h"
+#include "FileUtils.h"
 
 #include <stdexcept>
 #include <fstream>

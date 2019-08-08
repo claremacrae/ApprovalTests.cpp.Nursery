@@ -24,7 +24,9 @@ add_library(${PROJECT_NAME}
     CombinationApprovalsOld.h
     )
 
-target_include_directories(${PROJECT_NAME} PUBLIC .)
+# TODO Improve how Catch.hpp is found - ApprovalTests.cpp/ApprovalTests/Catch2Approvals.h requires a file call Catch.hpp
+target_include_directories(${PROJECT_NAME} PUBLIC . ${ApprovalTestsDir}/ApprovalTests ${ApprovalTestsDir}/lib )
+
 target_link_libraries(${PROJECT_NAME} ApprovalTests)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")

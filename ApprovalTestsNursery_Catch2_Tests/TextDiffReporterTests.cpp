@@ -1,5 +1,5 @@
 #include "reporters/TextDiffReporter.h"
-#include "ApprovalTests/namers/ApprovalTestNamer.h"
+#include "namers/ApprovalTestNamer.h"
 
 #include "Catch.hpp"
 

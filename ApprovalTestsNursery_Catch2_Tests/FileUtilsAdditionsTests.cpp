@@ -1,8 +1,8 @@
 #include "Catch.hpp"
 #include "FileUtilsAdditions.h"
-#include "ApprovalTests/namers/ApprovalTestNamer.h"
-#include "ApprovalTests/Approvals.h"
-#include "ApprovalTests/reporters/DiffReporter.h"
+#include "namers/ApprovalTestNamer.h"
+#include "Approvals.h"
+#include "reporters/DiffReporter.h"
 
 #include <iostream>
 

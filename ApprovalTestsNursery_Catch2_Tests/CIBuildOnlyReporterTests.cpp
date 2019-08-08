@@ -1,7 +1,7 @@
 #include "reporters/CIBuildOnlyReporter.h"
-#include "ApprovalTests/Approvals.h"
-#include "ApprovalTests/reporters/QuietReporter.h"
-#include "ApprovalTests/SystemUtils.h"
+#include "Approvals.h"
+#include "reporters/QuietReporter.h"
+#include "SystemUtils.h"
 
 #include "Catch.hpp"
 

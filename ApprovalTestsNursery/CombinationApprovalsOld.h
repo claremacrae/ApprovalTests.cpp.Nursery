@@ -8,24 +8,7 @@
 #include "reporters/Reporter.h"
 #include "Approvals.h"
 
-class Empty
-{
-public:
-    template< typename Other>
-    bool operator!=(const Other &/*rhs*/) const {
-        return true;
-    }
-
-    bool operator!=(const Empty &/*rhs*/) const {
-        return false;
-    }
-
-    friend std::ostream &operator<<(std::ostream &os, const Empty&) {
-        os << "This should never be written - see Empty\n";
-        return os;
-    }
-
-};
+#include "CombinationApprovals.h" // For Empty
 
 class CombinationApprovalsOld
 {

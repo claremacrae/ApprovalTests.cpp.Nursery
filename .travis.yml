@@ -53,11 +53,7 @@ matrix:
 
 # See https://github.com/zie87/sdl2_cxx/blob/fa03e4fdff828284af6f0fa08f7761103ef38ab8/.travis.yml
 script:
-  - pushd third_party
-  - git clone https://github.com/approvals/ApprovalTests.cpp.git
-  - cd ApprovalTests.cpp
-  - git show --oneline -s
-  - popd
+  - git submodule init third_party/ApprovalTests.cpp
   - mkdir .build
   - cd .build
   - cmake ..

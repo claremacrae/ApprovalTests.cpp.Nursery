@@ -3,7 +3,7 @@ image: Visual Studio 2017
 before_build:
 - cmd: >-
 
-    git submodule init third_party/ApprovalTests.cpp
+    git submodule update --init --recursive
 
     cmake .
 

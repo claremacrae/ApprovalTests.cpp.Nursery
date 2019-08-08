@@ -56,18 +56,14 @@ public:
         const Container2& inputs2,
         const Reporter& reporter = DefaultReporter())
     {
-        Empty empty;
-        std::stringstream s;
-        for (auto input1 : inputs1)
-        {
-            for (auto input2 : inputs2)
-            {
-                s << "(" << input1;
-                if (empty != input2) { s << ", " << input2; }
-                s << ") => " << converter(input1, input2) << '\n';
-            }
-        }
-        Approvals::verify(s.str(), reporter);
+        verifyAllCombinations(
+            [&](typename Container1::value_type i1,
+                typename Container2::value_type i2,
+                Empty){return converter(i1, i2);},
+            inputs1,
+            inputs2,
+            empty(),
+            reporter);
     }
 
     template <
@@ -78,13 +74,12 @@ public:
         const Container1& inputs1,
         const Reporter& reporter = DefaultReporter())
     {
-        std::stringstream s;
-        for (auto input1 : inputs1)
-        {
-            s << "(" << input1;
-            s << ") => " << converter(input1) << '\n';
-        }
-        Approvals::verify(s.str(), reporter);
+        verifyAllCombinations(
+            [&](typename Container1::value_type i1,
+                Empty){return converter(i1);},
+            inputs1,
+            empty(),
+            reporter);
     }
 
     // Implementation details: these are left public to allow users

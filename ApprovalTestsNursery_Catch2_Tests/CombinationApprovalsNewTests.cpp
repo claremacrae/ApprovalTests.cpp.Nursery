@@ -26,7 +26,7 @@ TEST_CASE("YouCanVerifyCombinationsNewOf1Reports") {
     {
         CombinationApprovalsNew::verifyAllCombinations( [](std::string s){return s + "!";}, words);
     }
-    catch(const ApprovalException& e)
+    catch(const ApprovalException&)
     {
         // ignore
     }

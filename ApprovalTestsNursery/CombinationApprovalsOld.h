@@ -76,34 +76,22 @@ public:
     }
 
     template <
-        typename Function,
-        typename Container1
-        >
+            typename Container1,
+            typename ReturnType>
     static void verifyAllCombinations(
-            Function converter,
+            std::function<ReturnType (
+                    typename Container1::value_type)> converter,
             const Container1& inputs1,
             const Reporter& reporter = DefaultReporter())
     {
         verifyAllCombinations<
-            Container1,
-                std::vector<Empty>, typename std::result_of<Function(typename Container1::value_type)>::type >([&](
+                Container1,
+                std::vector<Empty>, ReturnType>([&](
                                                       typename Container1::value_type i1,
                                                       Empty){return converter(i1);},
                                               inputs1,
                                               empty(),
                                               reporter);
-    }
-
-    template <
-        typename Container1,
-        typename ReturnType>
-    static void verifyAllCombinations(
-        std::function<ReturnType (
-            typename Container1::value_type)> converter,
-        const Container1& inputs1,
-        const Reporter& reporter = DefaultReporter())
-    {
-        verifyAllCombinations<decltype(converter)>(converter, inputs1, reporter);
     }
 
     // Implementation details: these are left public to allow users

@@ -9,11 +9,6 @@
 
 TEST_CASE("YouCanVerifyCombinationsOf1") {
     std::vector<std::string> words{"hello", "world"};
-    CombinationApprovalsOld::verifyAllCombinations( [](std::string s){return s + "!";}, words);
-}
-
-TEST_CASE("YouCanVerifyCombinationsOf1WithTemplateParameters") {
-    std::vector<std::string> words{"hello", "world"};
     CombinationApprovalsOld::verifyAllCombinations<std::vector<std::string>, std::string>( [](std::string s){return s + "!";}, words);
 }
 
@@ -23,7 +18,7 @@ TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
     auto frontLoadReporter = Approvals::useAsFrontLoadedReporter(reporter);
     try
     {
-        CombinationApprovalsOld::verifyAllCombinations( [](std::string s){return s + "!";}, words);
+        CombinationApprovalsOld::verifyAllCombinations<std::vector<std::string>, std::string>( [](std::string s){return s + "!";}, words);
     }
     catch(const ApprovalException&)
     {

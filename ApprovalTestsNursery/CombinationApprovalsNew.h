@@ -16,7 +16,6 @@
 // TODO Understand if it's always valid to pass function as template type?
 // TODO If not variadic, bump back up to 9 arguments
 // TODO Can I combine this with the old code, which requires template types
-// TODO Think about reducing the numbers of copies that are passed through... (rvalue refs)
 
 class CombinationApprovalsNew
 {

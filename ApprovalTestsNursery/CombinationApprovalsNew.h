@@ -10,12 +10,9 @@
 
 #include "CombinationApprovals.h" // For Empty
 
-// TODO Fix the calling of this when a reporter is supplied
-// TODO Fix the test for supplying of reporter - it's not supplying a reporter,
-//      so not actually testing what it was originally intended to do.
 // TODO Can I use variadic templates to simplify code
 // TODO Can I reduce copying - read up on rvalue references
-// TODO Review Jonathan's ranges cartesian_product.hpp
+// DONE Review Jonathan's ranges cartesian_product.hpp - it depends on C++14
 // TODO Understand if it's always valid to pass function as template type?
 // TODO If not variadic, bump back up to 9 arguments
 // TODO Can I combine this with the old code, which requires template types

@@ -30,7 +30,9 @@ public:
         typename Function,
         typename Container1,
         typename Container2,
-        typename Container3>
+        typename Container3,
+        // prevent compilation failure from user-supplied reporter being treated as a container:
+        typename std::enable_if<! std::is_base_of<Reporter, Container3>::value, int>::type = 0>
     static void verifyAllCombinations(
         Function converter,
         const Container1& inputs1,
@@ -59,7 +61,9 @@ public:
     template <
         typename Function,
         typename Container1,
-        typename Container2>
+        typename Container2,
+        // prevent compilation failure from user-supplied reporter being treated as a container:
+        typename std::enable_if<! std::is_base_of<Reporter, Container2>::value, int>::type = 0>
     static void verifyAllCombinations(
         Function converter,
         const Container1& inputs1,
@@ -78,7 +82,9 @@ public:
 
     template <
         typename Function,
-        typename Container1>
+        typename Container1,
+        // prevent compilation failure from user-supplied reporter being treated as a container:
+        typename std::enable_if<! std::is_base_of<Reporter, Container1>::value, int>::type = 0>
     static void verifyAllCombinations(
         Function converter,
         const Container1& inputs1,

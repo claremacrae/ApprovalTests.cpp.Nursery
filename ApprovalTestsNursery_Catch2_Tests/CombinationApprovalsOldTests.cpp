@@ -14,17 +14,24 @@ TEST_CASE("YouCanVerifyCombinationsOf1") {
 
 TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
     std::vector<std::string> words{"hello", "world"};
-    auto reporter = std::make_shared<FakeReporter>(); 
-    auto frontLoadReporter = Approvals::useAsFrontLoadedReporter(reporter);
+    // Suppress any front-loaded reporter that may have been set up in main.cpp.
+    // This was necessary to prevent a CI-specific reporter taking precedence
+    // over the reporter supplied here.
+    auto frontLoadReporter = Approvals::useAsFrontLoadedReporter(std::make_shared<DefaultFrontLoadedReporter>());
+
+    // The purpose of this test is to make sure that any reporter that gets 
+    // passed in as a parameter is passed all the way through the impelmentations
+    // of Approvals::useAsFrontLoadedReporter
+    FakeReporter reporter;
     try
     {
-        CombinationApprovalsOld::verifyAllCombinations<std::vector<std::string>, std::string>( [](std::string s){return s + "!";}, words);
+        CombinationApprovalsOld::verifyAllCombinations<std::vector<std::string>, std::string>( [](std::string s){return s + "!";}, words, reporter);
     }
     catch(const ApprovalException&)
     {
         // ignore
     }
-    REQUIRE(reporter->called == true);
+    REQUIRE(reporter.called == true);
 }
 
 // begin-snippet: YouCanVerifyCombinationsOf2

@@ -49,7 +49,6 @@ TEST_CASE("YouCanVerifyCombinationsOf2") {
 }
 // end-snippet
 
-#if 0
 TEST_CASE("YouCanVerifyCombinationsOf9") {
     std::vector<std::string> letters{"a", "b"};
     CombinationApprovalsNew::verifyAllCombinations<
@@ -74,7 +73,222 @@ TEST_CASE("YouCanVerifyCombinationsOf9") {
             std::string s9)
                               {return s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9;}, letters, letters, letters, letters, letters, letters, letters, letters, letters);
 }
-#endif
+
+TEST_CASE("YouCanVerifyCombinationsOf1MoreVaried") {
+    // A case with simpler data, to check that all the 
+    // arguments are passed through in the correct order.
+    CombinationApprovalsNew::verifyAllCombinations<
+            std::vector<std::string>,
+            std::string>( [](
+            std::string s1)
+            {return s1;},
+            std::vector<std::string>({"a"})
+            );
+}
+
+TEST_CASE("YouCanVerifyCombinationsOf2MoreVaried") {
+    // A case with simpler data, to check that all the 
+    // arguments are passed through in the correct order.
+    CombinationApprovalsNew::verifyAllCombinations<
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::string>( [](
+            std::string s1,
+            std::string s2)
+            {return s1 + s2;},
+            std::vector<std::string>({"a"}),
+            std::vector<std::string>({"b"})
+            );
+}
+
+TEST_CASE("YouCanVerifyCombinationsOf3MoreVaried") {
+    // A case with simpler data, to check that all the 
+    // arguments are passed through in the correct order.
+    CombinationApprovalsNew::verifyAllCombinations<
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::string>( [](
+            std::string s1,
+            std::string s2,
+            std::string s3)
+            {return s1 + s2 + s3;},
+            std::vector<std::string>({"a"}),
+            std::vector<std::string>({"b"}),
+            std::vector<std::string>({"c"})
+            );
+}
+
+TEST_CASE("YouCanVerifyCombinationsOf4MoreVaried") {
+    // A case with simpler data, to check that all the 
+    // arguments are passed through in the correct order.
+    CombinationApprovalsNew::verifyAllCombinations<
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::string>( [](
+            std::string s1,
+            std::string s2,
+            std::string s3,
+            std::string s4)
+            {return s1 + s2 + s3 + s4;},
+            std::vector<std::string>({"a"}),
+            std::vector<std::string>({"b"}),
+            std::vector<std::string>({"c"}),
+            std::vector<std::string>({"d"})
+            );
+}
+
+TEST_CASE("YouCanVerifyCombinationsOf5MoreVaried") {
+    // A case with simpler data, to check that all the 
+    // arguments are passed through in the correct order.
+    CombinationApprovalsNew::verifyAllCombinations<
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::string>( [](
+            std::string s1,
+            std::string s2,
+            std::string s3,
+            std::string s4,
+            std::string s5)
+            {return s1 + s2 + s3 + s4 + s5;},
+            std::vector<std::string>({"a"}),
+            std::vector<std::string>({"b"}),
+            std::vector<std::string>({"c"}),
+            std::vector<std::string>({"d"}),
+            std::vector<std::string>({"e"})
+            );
+}
+
+TEST_CASE("YouCanVerifyCombinationsOf6MoreVaried") {
+    // A case with simpler data, to check that all the 
+    // arguments are passed through in the correct order.
+    CombinationApprovalsNew::verifyAllCombinations<
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::string>( [](
+            std::string s1,
+            std::string s2,
+            std::string s3,
+            std::string s4,
+            std::string s5,
+            std::string s6)
+            {return s1 + s2 + s3 + s4 + s5 + s6;},
+            std::vector<std::string>({"a"}),
+            std::vector<std::string>({"b"}),
+            std::vector<std::string>({"c"}),
+            std::vector<std::string>({"d"}),
+            std::vector<std::string>({"e"}),
+            std::vector<std::string>({"f"})
+            );
+}
+
+TEST_CASE("YouCanVerifyCombinationsOf7MoreVaried") {
+    // A case with simpler data, to check that all the 
+    // arguments are passed through in the correct order.
+    CombinationApprovalsNew::verifyAllCombinations<
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::string>( [](
+            std::string s1,
+            std::string s2,
+            std::string s3,
+            std::string s4,
+            std::string s5,
+            std::string s6,
+            std::string s7)
+            {return s1 + s2 + s3 + s4 + s5 + s6 + s7;},
+            std::vector<std::string>({"a"}),
+            std::vector<std::string>({"b"}),
+            std::vector<std::string>({"c"}),
+            std::vector<std::string>({"d"}),
+            std::vector<std::string>({"e"}),
+            std::vector<std::string>({"f"}),
+            std::vector<std::string>({"g"})
+            );
+}
+
+TEST_CASE("YouCanVerifyCombinationsOf8MoreVaried") {
+    // A case with simpler data, to check that all the 
+    // arguments are passed through in the correct order.
+    CombinationApprovalsNew::verifyAllCombinations<
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::string>( [](
+            std::string s1,
+            std::string s2,
+            std::string s3,
+            std::string s4,
+            std::string s5,
+            std::string s6,
+            std::string s7,
+            std::string s8)
+            {return s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8;},
+            std::vector<std::string>({"a"}),
+            std::vector<std::string>({"b"}),
+            std::vector<std::string>({"c"}),
+            std::vector<std::string>({"d"}),
+            std::vector<std::string>({"e"}),
+            std::vector<std::string>({"f"}),
+            std::vector<std::string>({"g"}),
+            std::vector<std::string>({"h"})
+            );
+}
+
+TEST_CASE("YouCanVerifyCombinationsOf9MoreVaried") {
+    // A case with simpler data, to check that all the 
+    // arguments are passed through in the correct order.
+    CombinationApprovalsNew::verifyAllCombinations<
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::vector<std::string>,
+            std::string>( [](
+            std::string s1,
+            std::string s2,
+            std::string s3,
+            std::string s4,
+            std::string s5,
+            std::string s6,
+            std::string s7,
+            std::string s8,
+            std::string s9)
+            {return s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9;},
+            std::vector<std::string>({"a"}),
+            std::vector<std::string>({"b"}),
+            std::vector<std::string>({"c"}),
+            std::vector<std::string>({"d"}),
+            std::vector<std::string>({"e"}),
+            std::vector<std::string>({"f"}),
+            std::vector<std::string>({"g"}),
+            std::vector<std::string>({"h"}),
+            std::vector<std::string>({"i"})
+            );
+}
 
 TEST_CASE("CombinationOf1WithLambda") {
     CombinationApprovalsNew::verifyAllCombinations<

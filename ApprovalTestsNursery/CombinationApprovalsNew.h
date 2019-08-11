@@ -357,6 +357,236 @@ public:
             typename Container1,
             typename Container2,
             typename Container3,
+            typename Container4,
+            typename Container5,
+            typename Container6,
+            typename Container7,
+            typename Container8,
+            typename Container9,
+            typename ReturnType>
+    static void verifyAllCombinations(
+            std::function<ReturnType (
+                    typename Container1::value_type,
+                    typename Container2::value_type,
+                    typename Container3::value_type,
+                    typename Container4::value_type,
+                    typename Container5::value_type,
+                    typename Container6::value_type,
+                    typename Container7::value_type,
+                    typename Container8::value_type,
+                    typename Container9::value_type)> converter,
+            const Container1& inputs1,
+            const Container2& inputs2,
+            const Container3& inputs3,
+            const Container4& inputs4,
+            const Container5& inputs5,
+            const Container6& inputs6,
+            const Container7& inputs7,
+            const Container8& inputs8,
+            const Container9& inputs9,
+            const Reporter& reporter = DefaultReporter())
+    {
+        // Supply first template type, to prevent recursion and
+        // call the newer version (above) instead
+        verifyAllCombinations<decltype(converter)>(
+            converter,
+            inputs1,
+            inputs2,
+            inputs3,
+            inputs4,
+            inputs5,
+            inputs6,
+            inputs7,
+            inputs8,
+            inputs9,
+            reporter
+            );
+    }
+
+    template <
+            typename Container1,
+            typename Container2,
+            typename Container3,
+            typename Container4,
+            typename Container5,
+            typename Container6,
+            typename Container7,
+            typename Container8,
+            typename ReturnType>
+    static void verifyAllCombinations(
+            std::function<ReturnType (
+                    typename Container1::value_type,
+                    typename Container2::value_type,
+                    typename Container3::value_type,
+                    typename Container4::value_type,
+                    typename Container5::value_type,
+                    typename Container6::value_type,
+                    typename Container7::value_type,
+                    typename Container8::value_type)> converter,
+            const Container1& inputs1,
+            const Container2& inputs2,
+            const Container3& inputs3,
+            const Container4& inputs4,
+            const Container5& inputs5,
+            const Container6& inputs6,
+            const Container7& inputs7,
+            const Container8& inputs8,
+            const Reporter& reporter = DefaultReporter())
+    {
+        verifyAllCombinations<decltype(converter)>(
+            converter,
+            inputs1,
+            inputs2,
+            inputs3,
+            inputs4,
+            inputs5,
+            inputs6,
+            inputs7,
+            inputs8,
+            reporter
+            );
+    }
+
+    template <
+            typename Container1,
+            typename Container2,
+            typename Container3,
+            typename Container4,
+            typename Container5,
+            typename Container6,
+            typename Container7,
+            typename ReturnType>
+    static void verifyAllCombinations(
+            std::function<ReturnType (
+                    typename Container1::value_type,
+                    typename Container2::value_type,
+                    typename Container3::value_type,
+                    typename Container4::value_type,
+                    typename Container5::value_type,
+                    typename Container6::value_type,
+                    typename Container7::value_type)> converter,
+            const Container1& inputs1,
+            const Container2& inputs2,
+            const Container3& inputs3,
+            const Container4& inputs4,
+            const Container5& inputs5,
+            const Container6& inputs6,
+            const Container7& inputs7,
+            const Reporter& reporter = DefaultReporter())
+    {
+        verifyAllCombinations<decltype(converter)>(
+            converter,
+            inputs1,
+            inputs2,
+            inputs3,
+            inputs4,
+            inputs5,
+            inputs6,
+            inputs7,
+            reporter
+            );
+    }
+
+    template <
+            typename Container1,
+            typename Container2,
+            typename Container3,
+            typename Container4,
+            typename Container5,
+            typename Container6,
+            typename ReturnType>
+    static void verifyAllCombinations(
+            std::function<ReturnType (
+                    typename Container1::value_type,
+                    typename Container2::value_type,
+                    typename Container3::value_type,
+                    typename Container4::value_type,
+                    typename Container5::value_type,
+                    typename Container6::value_type)> converter,
+            const Container1& inputs1,
+            const Container2& inputs2,
+            const Container3& inputs3,
+            const Container4& inputs4,
+            const Container5& inputs5,
+            const Container6& inputs6,
+            const Reporter& reporter = DefaultReporter())
+    {
+        verifyAllCombinations<decltype(converter)>(
+            converter,
+            inputs1,
+            inputs2,
+            inputs3,
+            inputs4,
+            inputs5,
+            inputs6,
+            reporter
+            );
+    }
+
+    template <
+            typename Container1,
+            typename Container2,
+            typename Container3,
+            typename Container4,
+            typename Container5,
+            typename ReturnType>
+    static void verifyAllCombinations(
+            std::function<ReturnType (
+                    typename Container1::value_type,
+                    typename Container2::value_type,
+                    typename Container3::value_type,
+                    typename Container4::value_type,
+                    typename Container5::value_type)> converter,
+            const Container1& inputs1,
+            const Container2& inputs2,
+            const Container3& inputs3,
+            const Container4& inputs4,
+            const Container5& inputs5,
+            const Reporter& reporter = DefaultReporter())
+    {
+        verifyAllCombinations<decltype(converter)>(
+            converter,
+            inputs1,
+            inputs2,
+            inputs3,
+            inputs4,
+            inputs5,
+            reporter
+            );
+    }
+
+    template <
+            typename Container1,
+            typename Container2,
+            typename Container3,
+            typename Container4,
+            typename ReturnType>
+    static void verifyAllCombinations(
+            std::function<ReturnType (
+                    typename Container1::value_type,
+                    typename Container2::value_type,
+                    typename Container3::value_type,
+                    typename Container4::value_type)> converter,
+            const Container1& inputs1,
+            const Container2& inputs2,
+            const Container3& inputs3,
+            const Container4& inputs4,
+            const Reporter& reporter = DefaultReporter())
+    {
+        verifyAllCombinations<decltype(converter)>(
+            converter,
+            inputs1,
+            inputs2,
+            inputs3,
+            inputs4,
+            reporter
+            );
+    }
+
+    template <
+            typename Container1,
+            typename Container2,
+            typename Container3,
             typename ReturnType>
     static void verifyAllCombinations(
             std::function<ReturnType (
@@ -368,8 +598,6 @@ public:
             const Container3& inputs3,
             const Reporter& reporter = DefaultReporter())
     {
-        // Supply first template type, to prevent recursion and
-        // call the newer version (above) instead
         verifyAllCombinations<decltype(converter)>(
             converter,
             inputs1,

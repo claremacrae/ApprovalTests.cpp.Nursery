@@ -115,7 +115,9 @@ public:
             const Container3& inputs3,
             const Reporter& reporter = DefaultReporter())
     {
-        verifyAllCombinations(
+        // Supply first template type, to prevent recursion and
+        // call the newer version (above) instead
+        verifyAllCombinations<decltype(converter)>(
             converter,
             inputs1,
             inputs2,
@@ -136,7 +138,7 @@ public:
             const Container2& inputs2,
             const Reporter& reporter = DefaultReporter())
     {
-        verifyAllCombinations(
+        verifyAllCombinations<decltype(converter)>(
             converter,
             inputs1,
             inputs2,
@@ -153,7 +155,7 @@ public:
             const Container1& inputs1,
             const Reporter& reporter = DefaultReporter())
     {
-        verifyAllCombinations(
+        verifyAllCombinations<decltype(converter)>(
             converter,
             inputs1,
             reporter

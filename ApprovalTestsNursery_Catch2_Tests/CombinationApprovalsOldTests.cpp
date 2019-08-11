@@ -3,13 +3,16 @@
 #include <vector>
 #include <string>
 #include "PairUtilities.h"
-#include "CombinationApprovalsOld.h"
+#include "CombinationApprovalsNew.h"
 #include <reporters/FakeReporter.h>
 #include "CombinationTestHelpers.h"
 
+// =========================================================================
+// Tests of old, deprecated interface below - where caller needs to specify return type
+
 TEST_CASE("YouCanVerifyCombinationsOf1") {
     std::vector<std::string> words{"hello", "world"};
-    CombinationApprovalsOld::verifyAllCombinations<std::vector<std::string>, std::string>( [](std::string s){return s + "!";}, words);
+    CombinationApprovalsNew::verifyAllCombinations<std::vector<std::string>, std::string>( [](std::string s){return s + "!";}, words);
 }
 
 TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
@@ -25,7 +28,7 @@ TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
     FakeReporter reporter;
     try
     {
-        CombinationApprovalsOld::verifyAllCombinations<std::vector<std::string>, std::string>( [](std::string s){return s + "!";}, words, reporter);
+        CombinationApprovalsNew::verifyAllCombinations<std::vector<std::string>, std::string>( [](std::string s){return s + "!";}, words, reporter);
     }
     catch(const ApprovalException&)
     {
@@ -38,7 +41,7 @@ TEST_CASE("YouCanVerifyCombinationsOf1Reports") {
 TEST_CASE("YouCanVerifyCombinationsOf2") {
     std::vector<std::string> v{"hello", "world"};
     std::vector<int> numbers{1, 2, 3};
-    CombinationApprovalsOld::verifyAllCombinations<
+    CombinationApprovalsNew::verifyAllCombinations<
         std::vector<std::string>, std::vector<int>, std::pair<std::string, int>>(
             [](std::string s, int i){return std::make_pair(s, i);},
             v,
@@ -49,7 +52,7 @@ TEST_CASE("YouCanVerifyCombinationsOf2") {
 #if 0
 TEST_CASE("YouCanVerifyCombinationsOf9") {
     std::vector<std::string> letters{"a", "b"};
-    CombinationApprovalsOld::verifyAllCombinations<
+    CombinationApprovalsNew::verifyAllCombinations<
             std::vector<std::string>,
             std::vector<std::string>,
             std::vector<std::string>,
@@ -74,7 +77,7 @@ TEST_CASE("YouCanVerifyCombinationsOf9") {
 #endif
 
 TEST_CASE("CombinationOf1WithLambda") {
-    CombinationApprovalsOld::verifyAllCombinations<
+    CombinationApprovalsNew::verifyAllCombinations<
             std::vector<std::string>,
             std::string>( [](
             std::string s1)
@@ -82,7 +85,7 @@ TEST_CASE("CombinationOf1WithLambda") {
 }
 
 TEST_CASE("CombinationOf2WithLambda") {
-    CombinationApprovalsOld::verifyAllCombinations<
+    CombinationApprovalsNew::verifyAllCombinations<
             std::vector<std::string>,
             std::vector<std::string>,
             std::string>( [](
@@ -92,7 +95,7 @@ TEST_CASE("CombinationOf2WithLambda") {
 }
 
 TEST_CASE("CombinationOf3WithLambda") {
-    CombinationApprovalsOld::verifyAllCombinations<
+    CombinationApprovalsNew::verifyAllCombinations<
             std::vector<std::string>,
             std::vector<std::string>,
             std::vector<std::string>,
@@ -104,20 +107,20 @@ TEST_CASE("CombinationOf3WithLambda") {
 }
 
 TEST_CASE("CombinationOf1WithFunction") {
-    CombinationApprovalsOld::verifyAllCombinations<
+    CombinationApprovalsNew::verifyAllCombinations<
             std::vector<std::string>,
             std::string>(concatenate1, {"a"});
 }
 
 TEST_CASE("CombinationOf2WithFunction") {
-    CombinationApprovalsOld::verifyAllCombinations<
+    CombinationApprovalsNew::verifyAllCombinations<
             std::vector<std::string>,
             std::vector<std::string>,
             std::string>(concatenate2, {"a"}, {"b"});
 }
 
 TEST_CASE("CombinationOf3WithFunction") {
-    CombinationApprovalsOld::verifyAllCombinations<
+    CombinationApprovalsNew::verifyAllCombinations<
             std::vector<std::string>,
             std::vector<std::string>,
             std::vector<std::string>,

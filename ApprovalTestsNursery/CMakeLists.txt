@@ -21,7 +21,6 @@ add_library(${PROJECT_NAME}
     namers/ParallelFilesTestNamer.h
     reporters/TextDiffReporter.cpp
     reporters/TextDiffReporter.h
-    CombinationApprovalsOld.h
     CombinationApprovalsNew.h
     )
 

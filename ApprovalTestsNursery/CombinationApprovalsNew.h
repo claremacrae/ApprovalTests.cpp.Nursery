@@ -146,17 +146,16 @@ public:
             const Container2& inputs2,
             const Reporter& reporter = DefaultReporter())
     {
-        verifyAllCombinations<
-                Container1,
-                Container2,
-                std::vector<Empty>, ReturnType>([&](
-                                                      typename Container1::value_type i1,
-                                                      typename Container2::value_type i2,
-                                                      Empty){return converter(i1, i2);},
-                                              inputs1,
-                                              inputs2,
-                                              empty(),
-                                              reporter);
+        verifyAllCombinations(
+            [&](
+                typename Container1::value_type i1,
+                typename Container2::value_type i2,
+                Empty)
+                {return converter(i1, i2);},
+            inputs1,
+            inputs2,
+            empty(),
+            reporter);
     }
 
     template <
@@ -168,14 +167,13 @@ public:
             const Container1& inputs1,
             const Reporter& reporter = DefaultReporter())
     {
-        verifyAllCombinations<
-                Container1,
-                std::vector<Empty>, ReturnType>([&](
-                                                      typename Container1::value_type i1,
-                                                      Empty){return converter(i1);},
-                                              inputs1,
-                                              empty(),
-                                              reporter);
+        verifyAllCombinations(
+            [&](
+                typename Container1::value_type i1,Empty)
+                {return converter(i1);},
+            inputs1,
+            empty(),
+            reporter);
     }
 
     // Implementation details: these are left public to allow users

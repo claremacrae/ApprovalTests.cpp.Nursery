@@ -137,15 +137,11 @@ public:
             const Reporter& reporter = DefaultReporter())
     {
         verifyAllCombinations(
-            [&](
-                typename Container1::value_type i1,
-                typename Container2::value_type i2,
-                Empty)
-                {return converter(i1, i2);},
+            converter,
             inputs1,
             inputs2,
-            empty(),
-            reporter);
+            reporter
+            );
     }
 
     template <
@@ -158,12 +154,10 @@ public:
             const Reporter& reporter = DefaultReporter())
     {
         verifyAllCombinations(
-            [&](
-                typename Container1::value_type i1,Empty)
-                {return converter(i1);},
+            converter,
             inputs1,
-            empty(),
-            reporter);
+            reporter
+            );
     }
 
     // Implementation details: these are left public to allow users

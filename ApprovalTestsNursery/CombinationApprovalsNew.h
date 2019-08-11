@@ -115,23 +115,13 @@ public:
             const Container3& inputs3,
             const Reporter& reporter = DefaultReporter())
     {
-        Empty empty;
-        std::stringstream s;
-        for (auto input1 : inputs1)
-        {
-            for (auto input2 : inputs2)
-            {
-                for (auto input3 : inputs3)
-                {
-                    ReturnType result = converter(input1, input2, input3);
-                    s << "(" << input1;
-                    if (empty != input2) { s << ", " << input2; }
-                    if (empty != input3) { s << ", " << input3; }
-                    s << ") => " << result << '\n';
-                }
-            }
-        }
-        Approvals::verify(s.str(), reporter);
+        verifyAllCombinations(
+            converter,
+            inputs1,
+            inputs2,
+            inputs3,
+            reporter
+            );
     }
 
     template <

@@ -17,8 +17,6 @@ add_library(${PROJECT_NAME}
     reporters/FirstNFailuresReporter.h
     ForegroundSystemLauncher.cpp
     ForegroundSystemLauncher.h
-    namers/ParallelFilesTestNamer.cpp
-    namers/ParallelFilesTestNamer.h
     reporters/TextDiffReporter.cpp
     reporters/TextDiffReporter.h
     CombinationApprovalsNew.h

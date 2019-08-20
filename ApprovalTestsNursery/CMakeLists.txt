@@ -19,7 +19,6 @@ add_library(${PROJECT_NAME}
     ForegroundSystemLauncher.h
     reporters/TextDiffReporter.cpp
     reporters/TextDiffReporter.h
-    CombinationApprovalsNew.h
     )
 
 # TODO Improve how Catch.hpp is found - ApprovalTests.cpp/ApprovalTests/Catch2Approvals.h requires a file call Catch.hpp

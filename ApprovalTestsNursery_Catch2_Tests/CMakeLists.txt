@@ -6,10 +6,6 @@ add_executable(${PROJECT_NAME}
     CIBuildOnlyReporterTests.cpp
     FileUtilsAdditionsTests.cpp
     TextDiffReporterTests.cpp
-    CombinationApprovalsOldTests.cpp
-    CombinationApprovalsNewTests.cpp
-    CombinationTestHelpers.cpp
-    CombinationTestHelpers.h
     CatchGeneratorExperiments.cpp
     )
 target_include_directories(${PROJECT_NAME} PUBLIC ../third_party/ApprovalTests.cpp/ApprovalTests_Catch2_Tests)

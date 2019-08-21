@@ -8,7 +8,6 @@ add_library(${PROJECT_NAME}
     reporters/ConsoleDiffReporter.h
     namers/ExtendApprovalTestName.h
     FileUtilsAdditions.h
-    reporters/FirstNFailuresReporter.cpp
     reporters/FirstNFailuresReporter.h
     ForegroundSystemLauncher.cpp
     ForegroundSystemLauncher.h

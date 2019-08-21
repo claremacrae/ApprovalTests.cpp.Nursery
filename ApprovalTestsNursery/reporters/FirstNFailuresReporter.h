@@ -11,9 +11,21 @@
 class FirstNFailuresReporter : public Reporter
 {
 public:
-    FirstNFailuresReporter(int maximum_failures, Reporter* reporter);
+    FirstNFailuresReporter(int maximum_failures, Reporter* reporter) :
+        maximum_failures_(maximum_failures),
+        reporter_(std::unique_ptr<Reporter>(reporter))
+    {
+    }
 
-    bool report(std::string received, std::string approved) const override;
+    bool report(std::string received, std::string approved) const override
+    {
+        failure_count_ += 1;
+        if (failure_count_ > maximum_failures_)
+        {
+            return false;
+        }
+        return reporter_->report(received, approved);
+    }
 private:
     mutable int failure_count_ = 0;
     int maximum_failures_ = 0;

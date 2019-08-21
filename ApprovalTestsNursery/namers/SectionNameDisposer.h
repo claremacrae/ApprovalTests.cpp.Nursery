@@ -3,10 +3,10 @@
 
 #include "namers/ApprovalTestNamer.h"
 
-class ExtendApprovalTestName
+class SectionNameDisposer
 {
 public:
-    ExtendApprovalTestName(TestName& currentTest, const std::string& scope_name) :
+    SectionNameDisposer(TestName& currentTest, const std::string& scope_name) :
         currentTest(currentTest)
     {
         // Add extra section to output filename, to allow multiple files
@@ -14,7 +14,7 @@ public:
         currentTest.sections.push_back(scope_name);
     }
 
-    ~ExtendApprovalTestName()
+    ~SectionNameDisposer()
     {
         // Remove the extra section we added in the constructor
         currentTest.sections.pop_back();
@@ -23,9 +23,12 @@ private:
     TestName& currentTest;
 };
 
-inline ExtendApprovalTestName addAdditionalApprovalTestInformation(std::string info)
+struct NamerFactory
 {
-    return ExtendApprovalTestName(ApprovalTestNamer::currentTest(), std::move(info));
-}
+    static inline SectionNameDisposer appendToOutputFilename(std::string sectionName)
+    {
+        return SectionNameDisposer(ApprovalTestNamer::currentTest(), sectionName);
+    }
+};
 
 #endif //APPROVALTESTS_CPP_EXTENDAPPROVALTESTNAME_H

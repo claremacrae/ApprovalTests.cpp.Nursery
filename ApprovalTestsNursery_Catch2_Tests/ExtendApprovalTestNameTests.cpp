@@ -1,5 +1,5 @@
 #include <ApprovalTests/Approvals.h>
-#include "namers/ExtendApprovalTestName.h"
+#include "namers/SectionNameDisposer.h"
 #include "Catch.hpp"
 
 TEST_CASE( "It can add sections to file names" )

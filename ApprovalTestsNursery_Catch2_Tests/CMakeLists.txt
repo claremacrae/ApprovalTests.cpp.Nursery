@@ -7,6 +7,7 @@ add_executable(${PROJECT_NAME}
     FileUtilsAdditionsTests.cpp
     TextDiffReporterTests.cpp
     CatchGeneratorExperiments.cpp
+    ExtendApprovalTestNameTests.cpp
     )
 target_include_directories(${PROJECT_NAME} PUBLIC ../third_party/ApprovalTests.cpp/ApprovalTests_Catch2_Tests)
 target_link_libraries(${PROJECT_NAME} ApprovalTestsNursery)

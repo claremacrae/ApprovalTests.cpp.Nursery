@@ -10,7 +10,6 @@ add_library(${PROJECT_NAME}
     FileUtilsAdditions.h
     reporters/FirstNFailuresReporter.h
     ForegroundSystemLauncher.h
-    reporters/TextDiffReporter.cpp
     reporters/TextDiffReporter.h
     )
 

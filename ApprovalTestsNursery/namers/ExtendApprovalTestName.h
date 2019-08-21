@@ -3,7 +3,6 @@
 
 #include "namers/ApprovalTestNamer.h"
 
-// TODO Move to approvals
 class ExtendApprovalTestName
 {
 public:
@@ -24,7 +23,6 @@ private:
     TestName& currentTest;
 };
 
-// TODO Move to approvals
 inline ExtendApprovalTestName addAdditionalApprovalTestInformation(std::string info)
 {
     return ExtendApprovalTestName(ApprovalTestNamer::currentTest(), std::move(info));

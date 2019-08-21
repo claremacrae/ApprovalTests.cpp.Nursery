@@ -3,7 +3,6 @@ set(CMAKE_CXX_STANDARD 11)
 add_library(${PROJECT_NAME}
     reporters/ApprovalTestReporters.cpp
     reporters/ApprovalTestReporters.h
-    reporters/CatchReporter.cpp
     reporters/CatchReporter.h
     reporters/CIBuildOnlyReporter.cpp
     reporters/CIBuildOnlyReporter.h

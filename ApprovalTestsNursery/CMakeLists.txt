@@ -6,7 +6,6 @@ add_library(${PROJECT_NAME}
     reporters/CatchReporter.h
     reporters/CIBuildOnlyReporter.h
     reporters/ConsoleDiffReporter.h
-    namers/SectionNameDisposer.h
     FileUtilsAdditions.h
     reporters/FirstNFailuresReporter.h
     ForegroundSystemLauncher.h

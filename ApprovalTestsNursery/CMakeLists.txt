@@ -4,7 +4,6 @@ add_library(${PROJECT_NAME}
     reporters/ApprovalTestReporters.cpp
     reporters/ApprovalTestReporters.h
     reporters/CatchReporter.h
-    reporters/CIBuildOnlyReporter.cpp
     reporters/CIBuildOnlyReporter.h
     reporters/ConsoleDiffReporter.cpp
     reporters/ConsoleDiffReporter.h

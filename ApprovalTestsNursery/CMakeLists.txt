@@ -9,7 +9,6 @@ add_library(${PROJECT_NAME}
     namers/ExtendApprovalTestName.h
     FileUtilsAdditions.h
     reporters/FirstNFailuresReporter.h
-    ForegroundSystemLauncher.cpp
     ForegroundSystemLauncher.h
     reporters/TextDiffReporter.cpp
     reporters/TextDiffReporter.h

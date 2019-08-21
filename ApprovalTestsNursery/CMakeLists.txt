@@ -6,7 +6,6 @@ add_library(${PROJECT_NAME}
     reporters/CatchReporter.h
     reporters/CIBuildOnlyReporter.h
     reporters/ConsoleDiffReporter.h
-    namers/ExtendApprovalTestName.cpp
     namers/ExtendApprovalTestName.h
     FileUtilsAdditions.cpp
     FileUtilsAdditions.h

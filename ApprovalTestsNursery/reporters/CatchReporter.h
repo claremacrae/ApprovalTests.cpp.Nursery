@@ -11,7 +11,8 @@
 // Could check if Catch header has already been included, by checking
 // for the Catch version number #defines, but that would only work if
 // the Catch header was #included before the Approval Tests single-header
-#include "Catch.hpp"
+// #include "Catch.hpp"
+#ifdef CATCH_VERSION_MAJOR
 
 // A reporter which uses Catch CHECK statement to check the output
 class CatchReporter : public Reporter
@@ -30,5 +31,6 @@ public:
     }
 };
 
+#endif // CATCH_VERSION_MAJOR
 
 #endif //APPROVALTESTS_CPP_CATCHREPORTER_H

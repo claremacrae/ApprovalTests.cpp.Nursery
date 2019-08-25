@@ -1,0 +1,16 @@
+---
+AlignAfterOpenBracket: Align
+AlwaysBreakAfterReturnType: TopLevelDefinitions
+BinPackArguments: 'false'
+BinPackParameters: 'false'
+BreakBeforeBraces: Allman
+IndentWidth: '4'
+KeepEmptyLinesAtTheStartOfBlocks: 'true'
+NamespaceIndentation: All
+SortIncludes: 'true'
+SortUsingDeclarations: 'true'
+SpaceAfterTemplateKeyword: 'true'
+TabWidth: '4'
+UseTab: Never
+
+...

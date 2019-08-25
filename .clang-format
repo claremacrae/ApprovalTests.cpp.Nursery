@@ -1,8 +1,7 @@
 ---
-# Indent parameters at 4 spaces, not at the opening parenthesis
 Language: Cpp
 AccessModifierOffset: -4
-AlignAfterOpenBracket: Align
+AlignAfterOpenBracket: DontAlign
 AlwaysBreakAfterReturnType: None
 BinPackArguments: 'false'
 BinPackParameters: 'false'

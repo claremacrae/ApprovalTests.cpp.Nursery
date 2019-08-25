@@ -39,12 +39,14 @@ Reporter* ApprovalTestReporters::autoApproveReporter()
     return new AutoApproveReporter;
 }
 
-Reporter* ApprovalTestReporters::combinationReporter(Reporter* rep1, Reporter* rep2)
+Reporter* ApprovalTestReporters::combinationReporter(
+    Reporter* rep1, Reporter* rep2)
 {
     return new CombinationReporter({rep1, rep2});
 }
 
-Reporter* ApprovalTestReporters::firstWorkingReporter(Reporter* rep1, Reporter* rep2)
+Reporter* ApprovalTestReporters::firstWorkingReporter(
+    Reporter* rep1, Reporter* rep2)
 {
     return new FirstWorkingReporter({rep1, rep2});
 }
@@ -54,7 +56,8 @@ Reporter* ApprovalTestReporters::araxisMergeAndBeyondCompare4Reporter()
     return combinationReporter(araxisMergeReporter(), beyondCompare4Reporter());
 }
 
-Reporter* ApprovalTestReporters::firstNFailuresReporter(int maximum_failures, Reporter* reporter)
+Reporter* ApprovalTestReporters::firstNFailuresReporter(
+    int maximum_failures, Reporter* reporter)
 {
     return new FirstNFailuresReporter(maximum_failures, reporter);
 }
@@ -63,16 +66,14 @@ Reporter* ApprovalTestReporters::first30AraxisMergeAndBeyondCompare4Reporter()
 {
     return firstNFailuresReporter(
         30, // Arbitrary limit, as BeyondCompare hangs with many image comparisons
-        araxisMergeAndBeyondCompare4Reporter()
-    );
+        araxisMergeAndBeyondCompare4Reporter());
 }
 
 Reporter* ApprovalTestReporters::first30BeyondCompare4Reporter()
 {
     return firstNFailuresReporter(
         30, // Arbitrary limit, as BeyondCompare hangs with many image comparisons
-        beyondCompare4Reporter()
-    );
+        beyondCompare4Reporter());
 }
 
 std::shared_ptr<Reporter> ApprovalTestReporters::currentReporter()
@@ -83,6 +84,7 @@ std::shared_ptr<Reporter> ApprovalTestReporters::currentReporter()
     // Use a non-graphic reporter by default, in case these tests ever get run in a non-gui
     // environment, where they would throw up large numbers of Araxis Merge comparisons,
     // due to there being no approved files checked in to version control:
-    static std::shared_ptr<Reporter> reporter = std::make_shared<QuietReporter>();
+    static std::shared_ptr<Reporter> reporter =
+        std::make_shared<QuietReporter>();
     return reporter;
 }

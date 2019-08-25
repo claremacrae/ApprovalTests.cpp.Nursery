@@ -32,6 +32,6 @@ namespace ApprovalTestReporters
     Reporter* first30BeyondCompare4Reporter();
 
     std::shared_ptr<Reporter> currentReporter();
-}
+} // namespace ApprovalTestReporters
 
 #endif // APPROVALTESTS_CPP_APPROVALTESTREPORTERS_H

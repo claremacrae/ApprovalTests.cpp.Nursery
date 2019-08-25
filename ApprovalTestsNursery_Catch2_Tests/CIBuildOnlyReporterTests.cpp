@@ -13,12 +13,12 @@ TEST_CASE("CIBuildOnlyReporter reports correctly")
 {
     auto fakeReporter = std::make_shared<QuietReporter>();
 
-    CIBuildOnlyReporter reporter( fakeReporter );
+    CIBuildOnlyReporter reporter(fakeReporter);
 
     auto machineName = SystemUtils::getMachineName();
-    if (machineName == "CLARESPC" )
+    if (machineName == "CLARESPC")
     {
-        REQUIRE(! reporter.isRunningUnderCI());
+        REQUIRE(!reporter.isRunningUnderCI());
     }
     else
     {

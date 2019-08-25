@@ -20,14 +20,18 @@ public:
         }
 
         // Surround each of the arguments by double-quotes:
-        const std::string command = std::accumulate(
-            argv.begin(), argv.end(), std::string(""),
-            [](std::string a, std::string b) {return a + " " + "\"" + b + "\""; });
+        const std::string command = std::accumulate(argv.begin(),
+            argv.end(),
+            std::string(""),
+            [](std::string a, std::string b) {
+                return a + " " + "\"" + b + "\"";
+            });
 
         // See https://stackoverflow.com/a/9965141/104370 for why the Windows string is so complex:
-        const std::string launch = SystemUtils::isWindowsOs() ?
-            (std::string("cmd /S /C ") + "\"" + command + "\"") :
-            (command);
+        const std::string launch =
+            SystemUtils::isWindowsOs()
+                ? (std::string("cmd /S /C ") + "\"" + command + "\"")
+                : (command);
         system(launch.c_str());
         return true;
     }

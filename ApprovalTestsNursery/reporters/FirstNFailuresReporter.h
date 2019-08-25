@@ -11,9 +11,9 @@
 class FirstNFailuresReporter : public Reporter
 {
 public:
-    FirstNFailuresReporter(int maximum_failures, Reporter* reporter) :
-        maximum_failures_(maximum_failures),
-        reporter_(std::unique_ptr<Reporter>(reporter))
+    FirstNFailuresReporter(int maximum_failures, Reporter* reporter)
+        : maximum_failures_(maximum_failures),
+          reporter_(std::unique_ptr<Reporter>(reporter))
     {
     }
 
@@ -26,6 +26,7 @@ public:
         }
         return reporter_->report(received, approved);
     }
+
 private:
     mutable int failure_count_ = 0;
     int maximum_failures_ = 0;

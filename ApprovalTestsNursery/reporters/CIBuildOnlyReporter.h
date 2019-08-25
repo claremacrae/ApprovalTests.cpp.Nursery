@@ -12,8 +12,10 @@ class CIBuildOnlyReporter : public Reporter
 {
 private:
     std::shared_ptr<Reporter> m_reporter;
+
 public:
-    explicit CIBuildOnlyReporter(std::shared_ptr<Reporter> reporter) : m_reporter(reporter)
+    explicit CIBuildOnlyReporter(std::shared_ptr<Reporter> reporter)
+        : m_reporter(reporter)
     {
     }
 
@@ -42,7 +44,8 @@ public:
 
         // TeamCity: https://confluence.jetbrains.com/display/TCD18/Predefined+Build+Parameters
         //  TEAMCITY_VERSION
-        std::vector<std::string> environmentVariablesForCI = { "CI", "TEAMCITY_VERSION" };
+        std::vector<std::string> environmentVariablesForCI = {
+            "CI", "TEAMCITY_VERSION"};
         for (const auto& variable : environmentVariablesForCI)
         {
             if (!SystemUtils::safeGetEnv(variable.c_str()).empty())

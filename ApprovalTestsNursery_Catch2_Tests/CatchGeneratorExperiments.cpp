@@ -7,8 +7,9 @@
 TEST_CASE("Generator1")
 {
     auto i = GENERATE(1, 2, 3);
-    SECTION("one") {
-        auto j = GENERATE( -3, -2, -1 );
+    SECTION("one")
+    {
+        auto j = GENERATE(-3, -2, -1);
         std::cout << i << ", " << j << '\n';
     }
 }
@@ -23,11 +24,7 @@ TEST_CASE("Generator2")
     auto j = GENERATE(as<std::string>{}, "hello", "world");
 
     // TODO Check docs for range - is it clear that last value is not included?
-    // TODO Docs don't make it clear that step can be negative 
-    auto k = GENERATE(range(7,10));
-    std::cout <<
-        i << ", " <<
-        j << ", " <<
-        k << 
-        '\n';
+    // TODO Docs don't make it clear that step can be negative
+    auto k = GENERATE(range(7, 10));
+    std::cout << i << ", " << j << ", " << k << '\n';
 }

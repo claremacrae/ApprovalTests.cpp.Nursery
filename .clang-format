@@ -1,5 +1,4 @@
 ---
-# Use Class* not Class * - ditto &
 # Indent parameters at 4 spaces, not at the opening parenthesis
 Language: Cpp
 AccessModifierOffset: -4
@@ -11,6 +10,7 @@ BreakBeforeBraces: Allman
 IndentWidth: '4'
 KeepEmptyLinesAtTheStartOfBlocks: 'true'
 NamespaceIndentation: All
+PointerAlignment: Left
 ReflowComments: 'false'
 SortIncludes: 'false'
 SortUsingDeclarations: 'true'

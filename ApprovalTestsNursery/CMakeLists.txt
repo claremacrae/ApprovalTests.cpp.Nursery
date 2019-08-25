@@ -13,7 +13,7 @@ add_library(${PROJECT_NAME}
         )
 
 # TODO Improve how Catch.hpp is found - ApprovalTests.cpp/ApprovalTests/Catch2Approvals.h requires a file call Catch.hpp
-target_include_directories(${PROJECT_NAME} PUBLIC . ${ApprovalTestsDir}/ApprovalTests ${ApprovalTestsDir}/lib)
+target_include_directories(${PROJECT_NAME} PUBLIC . ${ApprovalTestsDir}/ApprovalTests)
 
 target_link_libraries(${PROJECT_NAME} ApprovalTests)
 

@@ -3,8 +3,8 @@
 
 #define APPROVALS_CATCH
 #include "Catch2Approvals.h"
-#include "Approvals.h"
-#include "reporters/DiffReporter.h"
+#include "ApprovalTests/Approvals.h"
+#include "ApprovalTests/reporters/DiffReporter.h"
 #include "reporters/CIBuildOnlyReporter.h"
 #include "reporters/TextDiffReporter.h"
 

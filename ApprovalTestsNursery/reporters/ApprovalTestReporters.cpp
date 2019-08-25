@@ -1,11 +1,11 @@
 #include "ApprovalTestReporters.h"
 
-#include "reporters/QuietReporter.h"
-#include "reporters/CombinationReporter.h"
-#include "reporters/WindowsReporters.h"
-#include "reporters/ClipboardReporter.h"
-#include "reporters/AutoApproveIfMissingReporter.h"
-#include "reporters/AutoApproveReporter.h"
+#include "ApprovalTests/reporters/QuietReporter.h"
+#include "ApprovalTests/reporters/CombinationReporter.h"
+#include "ApprovalTests/reporters/WindowsReporters.h"
+#include "ApprovalTests/reporters/ClipboardReporter.h"
+#include "ApprovalTests/reporters/AutoApproveIfMissingReporter.h"
+#include "ApprovalTests/reporters/AutoApproveReporter.h"
 #include "FirstNFailuresReporter.h"
 
 #include <memory>

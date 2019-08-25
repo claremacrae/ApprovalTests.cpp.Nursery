@@ -1,7 +1,7 @@
 #include "Catch.hpp"
 // Catch header must be included before using CatchReporter
 #include "reporters/CatchReporter.h"
-#include "Approvals.h"
+#include "ApprovalTests/Approvals.h"
 
 TEST_CASE("CatchReporter logs failure", "[!shouldfail]")
 {

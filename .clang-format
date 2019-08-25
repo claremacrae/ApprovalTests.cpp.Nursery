@@ -1,14 +1,18 @@
 ---
+# Use Class* not Class * - ditto &
+# Don't wrap long comments
+# Indent parameters at 4 spaces, not at the opening parenthesis
+Language: Cpp
 AccessModifierOffset: -4
 AlignAfterOpenBracket: Align
-AlwaysBreakAfterReturnType: TopLevelDefinitions
+AlwaysBreakAfterReturnType: None
 BinPackArguments: 'false'
 BinPackParameters: 'false'
 BreakBeforeBraces: Allman
 IndentWidth: '4'
 KeepEmptyLinesAtTheStartOfBlocks: 'true'
 NamespaceIndentation: All
-SortIncludes: 'true'
+SortIncludes: 'false'
 SortUsingDeclarations: 'true'
 SpaceAfterTemplateKeyword: 'true'
 TabWidth: '4'

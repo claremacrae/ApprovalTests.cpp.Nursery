@@ -14,24 +14,27 @@
 // #include "Catch.hpp"
 #ifdef CATCH_VERSION_MAJOR
 
-// A reporter which uses Catch CHECK statement to check the output
-class CatchReporter : public Reporter
+namespace ApprovalTests
 {
-public:
-    bool report(std::string received, std::string approved) const override
+    // A reporter which uses Catch CHECK statement to check the output
+    class CatchReporter : public Reporter
     {
-        const auto receivedText =
-            FileUtilsAdditions::readFileReturnEmptyIfMissing(received);
-        const auto approvedText =
-            FileUtilsAdditions::readFileReturnEmptyIfMissing(approved);
-        // By using CHECK instead of REQUIRE, program flow continues - Catch does not throw an exception
-        std::cout << "Checking content of files:" << std::endl;
-        std::cout << "received: " << received << std::endl;
-        std::cout << "approved: " << approved << std::endl;
-        CHECK(receivedText == approvedText);
-        return true;
-    }
-};
+    public:
+        bool report(std::string received, std::string approved) const override
+        {
+            const auto receivedText =
+                FileUtilsAdditions::readFileReturnEmptyIfMissing(received);
+            const auto approvedText =
+                FileUtilsAdditions::readFileReturnEmptyIfMissing(approved);
+            // By using CHECK instead of REQUIRE, program flow continues - Catch does not throw an exception
+            std::cout << "Checking content of files:" << std::endl;
+            std::cout << "received: " << received << std::endl;
+            std::cout << "approved: " << approved << std::endl;
+            CHECK(receivedText == approvedText);
+            return true;
+        }
+    };
+} // namespace ApprovalTests
 
 #endif // CATCH_VERSION_MAJOR
 

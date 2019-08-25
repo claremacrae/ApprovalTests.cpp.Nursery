@@ -59,7 +59,7 @@ Reporter* ApprovalTestReporters::araxisMergeAndBeyondCompare4Reporter()
 Reporter* ApprovalTestReporters::firstNFailuresReporter(
     int maximum_failures, Reporter* reporter)
 {
-    return new FirstNFailuresReporter(maximum_failures, reporter);
+    return new ApprovalTests::FirstNFailuresReporter(maximum_failures, reporter);
 }
 
 Reporter* ApprovalTestReporters::first30AraxisMergeAndBeyondCompare4Reporter()

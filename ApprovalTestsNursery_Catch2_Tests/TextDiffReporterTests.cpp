@@ -9,6 +9,6 @@ TEST_CASE("TextDiffReporter finds a differencing tool")
     const auto directory = namer.getDirectory();
     const std::string inputFile = directory + "sample_file.txt";
 
-    TextDiffReporter reporter;
+    ApprovalTests::TextDiffReporter reporter;
     REQUIRE(reporter.report(inputFile, inputFile));
 }

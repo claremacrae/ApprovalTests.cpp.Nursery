@@ -7,7 +7,7 @@ TEST_CASE("CatchReporter logs failure", "[!shouldfail]")
 {
     // Force this reporter to be used, by overriding any existing
     // front-loaded-reporter:
-    auto reporter = std::make_shared<CatchReporter>();
+    auto reporter = std::make_shared<ApprovalTests::CatchReporter>();
     auto disposer = Approvals::useAsFrontLoadedReporter(reporter);
 
     try

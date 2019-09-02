@@ -3,6 +3,7 @@
 
 #include "reporters/Reporter.h"
 #include "SystemUtils.h"
+#include "ApprovalTests/Approvals.h"
 
 #include <vector>
 #include <memory>
@@ -21,6 +22,12 @@ namespace ApprovalTests
         {
         }
 
+        static FrontLoadedReporterDisposer useAsFrontLoadedReporter(const std::shared_ptr<Reporter>& reporter)
+        {
+            return Approvals::useAsFrontLoadedReporter(
+                    std::make_shared<ApprovalTests::CIBuildOnlyReporter>( reporter ));
+        }
+
         bool report(std::string received, std::string approved) const override
         {
             if (!isRunningUnderCI())
@@ -33,24 +40,15 @@ namespace ApprovalTests
             return true;
         }
 
-        bool isRunningUnderCI() const
+        static bool isRunningUnderCI()
         {
-            // Travis: https://docs.travis-ci.com/user/environment-variables/#default-environment-variables
-            //  CI=true
-            //  TRAVIS=true
-            //  CONTINUOUS_INTEGRATION=true
-
-            // AppVeyor: https://www.appveyor.com/docs/environment-variables/
-            //  APPVEYOR - True (true on Ubuntu image) if build runs in AppVeyor environment
-            //  CI - True (true on Ubuntu image) if build runs in AppVeyor environment
-
-            // TeamCity: https://confluence.jetbrains.com/display/TCD18/Predefined+Build+Parameters
-            //  TEAMCITY_VERSION
-            std::vector<std::string> environmentVariablesForCI = {
-                "CI", "TEAMCITY_VERSION"};
+//            auto travis = {"CI", "TRAVIS", "CONTINUOUS_INTEGRATION"}; // https://docs.travis-ci.com/user/environment-variables/#default-environment-variables
+//            auto appVeyor = {"CI", "APPVEYOR"}; // https://www.appveyor.com/docs/environment-variables/
+//            auto teamCity = {"TEAMCITY_VERSION"}; // https://confluence.jetbrains.com/display/TCD18/Predefined+Build+Parameters
+            auto environmentVariablesForCI = {"CI", "CONTINUOUS_INTEGRATION", "TEAMCITY_VERSION"};
             for (const auto& variable : environmentVariablesForCI)
             {
-                if (!SystemUtils::safeGetEnv(variable.c_str()).empty())
+                if (!SystemUtils::safeGetEnv(variable).empty())
                 {
                     return true;
                 }

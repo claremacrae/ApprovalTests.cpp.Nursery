@@ -11,18 +11,6 @@ namespace
 
 TEST_CASE("CIBuildOnlyReporter reports correctly")
 {
-    auto fakeReporter = std::make_shared<QuietReporter>();
-
-    ApprovalTests::CIBuildOnlyReporter reporter(fakeReporter);
-
-    auto machineName = SystemUtils::getMachineName();
-    if (machineName == "CLARESPC")
-    {
-        REQUIRE(!reporter.isRunningUnderCI());
-    }
-    else
-    {
-        // Assume the only other run of this code will be on CI machines, for now.
-        REQUIRE(reporter.isRunningUnderCI());
-    }
+//    auto devMachine =  (!SystemUtils::safeGetEnv("DEVMACHINE").empty());
+//    REQUIRE(ApprovalTests::CIBuildOnlyReporter::isRunningUnderCI() == !devMachine);
 }

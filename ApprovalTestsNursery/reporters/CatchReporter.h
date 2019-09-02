@@ -12,6 +12,9 @@
 // for the Catch version number #defines, but that would only work if
 // the Catch header was #included before the Approval Tests single-header
 // #include "Catch.hpp"
+// This might mean changing the single-header release script so that all
+// integration headers go before anything else, as they are the things that
+// #include the header for the chosen test framework, e.g. "Catch.hpp"
 #ifdef CATCH_VERSION_MAJOR
 
 namespace ApprovalTests
@@ -27,6 +30,7 @@ namespace ApprovalTests
             const auto approvedText =
                 FileUtilsAdditions::readFileReturnEmptyIfMissing(approved);
             // By using CHECK instead of REQUIRE, program flow continues - Catch does not throw an exception
+            // Note that ApprovalTests will later throw an exception though.
             std::cout << "Checking content of files:" << std::endl;
             std::cout << "received: " << received << std::endl;
             std::cout << "approved: " << approved << std::endl;

@@ -1,8 +1,6 @@
 project(ApprovalTestsNursery)
 set(CMAKE_CXX_STANDARD 11)
 add_library(${PROJECT_NAME}
-        reporters/ApprovalTestReporters.cpp
-        reporters/ApprovalTestReporters.h
         reporters/CatchReporter.h
         reporters/ConsoleDiffReporter.h
         FileUtilsAdditions.h

@@ -3,7 +3,6 @@ set(CMAKE_CXX_STANDARD 11)
 add_executable(${PROJECT_NAME}
         main.cpp
         CatchReporterTests.cpp
-        CIBuildOnlyReporterTests.cpp
         FileUtilsAdditionsTests.cpp
         TextDiffReporterTests.cpp
         CatchGeneratorExperiments.cpp

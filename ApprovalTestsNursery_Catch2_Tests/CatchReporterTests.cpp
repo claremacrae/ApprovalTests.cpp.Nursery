@@ -3,6 +3,8 @@
 #include "reporters/CatchReporter.h"
 #include "ApprovalTests/Approvals.h"
 
+using namespace ApprovalTests;
+
 TEST_CASE("CatchReporter logs failure", "[!shouldfail]")
 {
     // Force this reporter to be used, by overriding any existing

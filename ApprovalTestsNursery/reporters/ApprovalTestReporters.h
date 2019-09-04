@@ -1,9 +1,13 @@
 #ifndef APPROVALTESTS_CPP_APPROVALTESTREPORTERS_H
 #define APPROVALTESTS_CPP_APPROVALTESTREPORTERS_H
 
-#include "ApprovalTests/reporters/Reporter.h"
+#include "ApprovalTests/core/Reporter.h"
 
 #include <memory>
+
+// todo delete this file - it's not worth maintaining now
+
+using namespace ApprovalTests;
 
 namespace ApprovalTestReporters
 {

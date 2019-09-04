@@ -2,11 +2,13 @@
 // ReSharper disable once CppUnusedIncludeDirective
 
 #define APPROVALS_CATCH
-#include "Catch2Approvals.h"
+#include "ApprovalTests/integrations/catch/Catch2Approvals.h"
 #include "ApprovalTests/Approvals.h"
 #include "ApprovalTests/reporters/DiffReporter.h"
 //#include "reporters/CIBuildOnlyReporter.h"
 #include "reporters/TextDiffReporter.h"
+
+using namespace ApprovalTests;
 
 auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
 

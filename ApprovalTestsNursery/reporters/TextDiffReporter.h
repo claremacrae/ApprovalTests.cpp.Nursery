@@ -1,11 +1,12 @@
 #ifndef APPROVALTESTS_CPP_TEXTDIFFREPORTER_H
 #define APPROVALTESTS_CPP_TEXTDIFFREPORTER_H
 
-#include "reporters/Reporter.h"
+#include "core/Reporter.h"
 #include "ConsoleDiffReporter.h"
 #include "reporters/FirstWorkingReporter.h"
 
 #include <memory>
+#include <iostream>
 
 namespace ApprovalTests
 {

@@ -6,6 +6,8 @@
 
 #include <iostream>
 
+using namespace ApprovalTests;
+
 TEST_CASE("It reads sample_file.txt correctly")
 {
     ApprovalTestNamer namer;

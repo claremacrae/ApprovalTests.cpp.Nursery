@@ -3,6 +3,8 @@
 
 #include "Catch.hpp"
 
+using namespace ApprovalTests;
+
 TEST_CASE("TextDiffReporter finds a differencing tool")
 {
     ApprovalTestNamer namer;

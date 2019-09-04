@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_CATCHREPORTER_H
 #define APPROVALTESTS_CPP_CATCHREPORTER_H
 
-#include "reporters/Reporter.h"
+#include "core/Reporter.h"
 #include "FileUtilsAdditions.h"
 
 #include <iostream>

@@ -1,7 +1,7 @@
 #ifndef APPROVALTESTS_CPP_FILEUTILSADDITIONS_H
 #define APPROVALTESTS_CPP_FILEUTILSADDITIONS_H
 
-#include "FileUtils.h"
+#include "utilities/FileUtils.h"
 
 #include <stdexcept>
 #include <fstream>

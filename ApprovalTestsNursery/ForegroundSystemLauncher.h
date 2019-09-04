@@ -1,8 +1,8 @@
 #ifndef APPROVALTESTS_CPP_FOREGROUNDSYSTEMLAUNCHER_H
 #define APPROVALTESTS_CPP_FOREGROUNDSYSTEMLAUNCHER_H
 
-#include "reporters/CommandLauncher.h"
-#include "reporters/SystemLauncher.h"
+#include "launchers/CommandLauncher.h"
+#include "launchers/SystemLauncher.h"
 
 namespace ApprovalTests
 {

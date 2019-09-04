@@ -12,9 +12,13 @@
 // for the Catch version number #defines, but that would only work if
 // the Catch header was #included before the Approval Tests single-header
 // #include "Catch.hpp"
+//
 // This might mean changing the single-header release script so that all
 // integration headers go before anything else, as they are the things that
 // #include the header for the chosen test framework, e.g. "Catch.hpp"
+//
+// Another way might be to include this file inside Catch2Approvals.h - to ensure
+// as soon as that includes the Catch header, then this file gets included.
 #ifdef CATCH_VERSION_MAJOR
 
 namespace ApprovalTests

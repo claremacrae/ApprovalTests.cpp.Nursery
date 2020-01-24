@@ -1,3 +1,0 @@
-[submodule "third_party/ApprovalTests.cpp"]
-	path = third_party/ApprovalTests.cpp
-	url = https://github.com/approvals/ApprovalTests.cpp

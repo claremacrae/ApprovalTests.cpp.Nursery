@@ -7,11 +7,7 @@ add_executable(${PROJECT_NAME}
         TextDiffReporterTests.cpp
         CatchGeneratorExperiments.cpp
         )
-target_include_directories(${PROJECT_NAME} PUBLIC
-        ../third_party/ApprovalTests.cpp/tests/ApprovalTests_Catch2_Tests
-        ../third_party/ApprovalTests.cpp/third_party/catch2
-        )
-target_link_libraries(${PROJECT_NAME} ApprovalTestsNursery)
+target_link_libraries(${PROJECT_NAME} ApprovalTestsNursery Catch2::Catch2)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
 if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")

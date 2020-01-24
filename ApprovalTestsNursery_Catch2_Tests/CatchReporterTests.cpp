@@ -1,4 +1,4 @@
-#include "Catch.hpp"
+#include "catch2/catch.hpp"
 // Catch header must be included before using CatchReporter
 #include "reporters/CatchReporter.h"
 #include "ApprovalTests/Approvals.h"

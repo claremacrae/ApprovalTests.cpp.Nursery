@@ -1,20 +1,19 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.14)
 #set(CMAKE_VERBOSE_MAKEFILE ON)
 
 # disable testsuite if used via add_subdirectory()
 if (NOT DEFINED PROJECT_NAME)
-    set(NOT_SUBPROJECT ON)
+    set(NURSERY_NOT_SUBPROJECT ON)
 endif ()
 
 set(CMAKE_VERBOSE_MAKEFILE off)
 
-set(ApprovalTestsDir ${CMAKE_SOURCE_DIR}/third_party/ApprovalTests.cpp)
-add_subdirectory(${ApprovalTestsDir}/ApprovalTests build_approvals EXCLUDE_FROM_ALL)
-
 project(ApprovalTests.cpp.Nursery)
+
+add_subdirectory(dependencies)
 add_subdirectory(ApprovalTestsNursery)
 
-if (NOT_SUBPROJECT)
+if (NURSERY_NOT_SUBPROJECT)
     enable_testing()
     add_subdirectory(ApprovalTestsNursery_Catch2_Tests)
 endif ()

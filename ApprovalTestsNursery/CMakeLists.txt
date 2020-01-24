@@ -10,10 +10,9 @@ add_library(${PROJECT_NAME} INTERFACE)
 #        reporters/TextDiffReporter.h
 #        )
 
-# TODO Improve how Catch.hpp is found - ApprovalTests.cpp/ApprovalTests/Catch2Approvals.h requires a file call Catch.hpp
-target_include_directories(${PROJECT_NAME} INTERFACE . ${ApprovalTestsDir}/ApprovalTests)
+target_include_directories(${PROJECT_NAME} INTERFACE .)
 
-target_link_libraries(${PROJECT_NAME} INTERFACE ApprovalTests)
+target_link_libraries(${PROJECT_NAME} INTERFACE ApprovalTests::ApprovalTests)
 
 #if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
 #    target_compile_options(${PROJECT_NAME} PRIVATE

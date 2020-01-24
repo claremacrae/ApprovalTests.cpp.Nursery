@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Catch.hpp"
+#include "catch2/catch.hpp"
 
 // A place to experiment with Catch2' generators, and debug them,
 // to get ideas for alternative implementations of our CombinationApprovals

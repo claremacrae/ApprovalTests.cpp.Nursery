@@ -1,7 +1,7 @@
 #include "reporters/TextDiffReporter.h"
 #include "namers/ApprovalTestNamer.h"
 
-#include "Catch.hpp"
+#include "catch2/catch.hpp"
 
 using namespace ApprovalTests;
 

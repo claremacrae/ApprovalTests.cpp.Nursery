@@ -14,8 +14,8 @@ namespace ApprovalTests
     {
     public:
         FirstNFailuresReporter(int maximum_failures, Reporter* reporter)
-            : maximum_failures_(maximum_failures),
-              reporter_(std::unique_ptr<Reporter>(reporter))
+            : maximum_failures_(maximum_failures)
+            , reporter_(std::unique_ptr<Reporter>(reporter))
         {
         }
 

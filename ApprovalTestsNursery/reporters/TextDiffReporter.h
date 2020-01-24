@@ -22,7 +22,8 @@ namespace ApprovalTests
     public:
         TextDiffReporter()
         {
-            std::vector<Reporter*> reporters = {new ConsoleDiffReporter("diff"),
+            std::vector<Reporter*> reporters = {
+                new ConsoleDiffReporter("diff"),
                 new ConsoleDiffReporter("C:/Windows/System32/fc.exe")};
             m_reporter =
                 std::unique_ptr<Reporter>(new FirstWorkingReporter(reporters));

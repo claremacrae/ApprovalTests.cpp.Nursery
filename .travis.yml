@@ -94,7 +94,7 @@ branches:
       - libstdc++-9-dev
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-xenial-9
+      - llvm-toolchain-bionic-9
 
 matrix:
   include:

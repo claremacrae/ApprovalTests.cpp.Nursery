@@ -61,7 +61,7 @@ jobs:
 
         - buildtype: ubuntu-latest-ninja
           os: ubuntu-latest
-          generator: '"Ninja"'
+          generator: '"Ninja" -DCMAKE_CXX_FLAGS_INIT=-DAPPROVALS_CATCH_DISABLE_FILE_MACRO_CHECK'
           in_source_build: false
 
         - buildtype:  macOS-latest

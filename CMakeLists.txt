@@ -7,7 +7,7 @@ endif ()
 
 project(ApprovalTests.cpp.Nursery)
 
-set(CMAKE_VERBOSE_MAKEFILE off)
+set(CMAKE_VERBOSE_MAKEFILE on)
 
 add_subdirectory(dependencies)
 add_subdirectory(ApprovalTestsNursery)

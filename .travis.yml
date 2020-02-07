@@ -87,6 +87,15 @@ branches:
       - ubuntu-toolchain-r-test
       - llvm-toolchain-xenial-8
 
+.addons-clang9: &clang9
+  apt:
+    packages:
+      - clang-9
+      - libstdc++-9-dev
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-xenial-9
+
 matrix:
   include:
 
@@ -137,6 +146,11 @@ matrix:
       os: linux
       dist: xenial
       addons: *clang8
+
+    - env: CLANG_VERSION=9
+      os: linux
+      dist: xenial
+      addons: *clang9
 
     # -------------------------------------------------------------------------
     # Mac clang

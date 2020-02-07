@@ -58,7 +58,7 @@ branches:
       - libstdc++-8-dev
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-5.0
+      - llvm-toolchain-xemial-5.0
 
 .addons-clang6: &clang6
   apt:
@@ -67,7 +67,7 @@ branches:
       - libstdc++-8-dev
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-6.0
+      - llvm-toolchain-xemial-6.0
 
 .addons-clang7: &clang7
   apt:
@@ -76,7 +76,7 @@ branches:
       - libstdc++-8-dev
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-7
+      - llvm-toolchain-xemial-7
 
 .addons-clang8: &clang8
   apt:
@@ -85,7 +85,7 @@ branches:
       - libstdc++-8-dev
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-8
+      - llvm-toolchain-xemial-8
 
 matrix:
   include:
@@ -120,22 +120,22 @@ matrix:
 
     - env: CLANG_VERSION=5.0
       os: linux
-      dist: trusty
+      dist: xemial
       addons: *clang5
 
     - env: CLANG_VERSION=6.0
       os: linux
-      dist: trusty
+      dist: xemial
       addons: *clang6
 
     - env: CLANG_VERSION=7
       os: linux
-      dist: trusty
+      dist: xemial
       addons: *clang7
 
     - env: CLANG_VERSION=8
       os: linux
-      dist: trusty
+      dist: xemial
       addons: *clang8
 
     # -------------------------------------------------------------------------

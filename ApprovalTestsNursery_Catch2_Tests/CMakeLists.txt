@@ -10,16 +10,4 @@ add_executable(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME} ApprovalTestsNursery Catch2::Catch2)
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
-if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    target_compile_options(${PROJECT_NAME} PRIVATE
-            -Wall
-            -Wextra
-            -Wpedantic
-            -Werror
-            )
-elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-    target_compile_options(${PROJECT_NAME} PRIVATE
-            /W4
-            /WX
-            )
-endif ()
+include(WarningsAsErrors)

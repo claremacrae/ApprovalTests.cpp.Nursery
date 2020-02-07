@@ -7,6 +7,8 @@ endif ()
 
 project(ApprovalTests.cpp.Nursery)
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/CMake/")
+
 set(CMAKE_VERBOSE_MAKEFILE on)
 
 add_subdirectory(dependencies)

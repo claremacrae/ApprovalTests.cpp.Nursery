@@ -147,10 +147,10 @@ matrix:
       dist: xenial
       addons: *clang8
 
-    - env: CLANG_VERSION=9
-      os: linux
-      dist: xenial
-      addons: *clang9
+#    - env: CLANG_VERSION=9
+#      os: linux
+#      dist: xenial
+#      addons: *clang9
 
     # -------------------------------------------------------------------------
     # Mac clang

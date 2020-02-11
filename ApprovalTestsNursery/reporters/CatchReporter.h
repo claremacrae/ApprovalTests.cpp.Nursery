@@ -2,7 +2,7 @@
 #define APPROVALTESTS_CPP_CATCHREPORTER_H
 
 #include "core/Reporter.h"
-#include "FileUtilsAdditions.h"
+#include "ApprovalTests/utilities/FileUtils.h"
 
 #include <iostream>
 
@@ -30,9 +30,9 @@ namespace ApprovalTests
         bool report(std::string received, std::string approved) const override
         {
             const auto receivedText =
-                FileUtilsAdditions::readFileReturnEmptyIfMissing(received);
+                FileUtils::readFileReturnEmptyIfMissing(received);
             const auto approvedText =
-                FileUtilsAdditions::readFileReturnEmptyIfMissing(approved);
+                FileUtils::readFileReturnEmptyIfMissing(approved);
             // By using CHECK instead of REQUIRE, program flow continues - Catch does not throw an exception
             // Note that ApprovalTests will later throw an exception though.
             std::cout << "Checking content of files:" << std::endl;

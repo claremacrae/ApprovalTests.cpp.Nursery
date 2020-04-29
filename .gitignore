@@ -8,3 +8,4 @@ doc/html/
 .vs/
 /.vscode/
 *.runsettings
+/doc/_build/

@@ -7,9 +7,12 @@
 
 namespace ApprovalTests
 {
-    // Handle only up to a given number of failures. After that, just do nothing and return false.
-    // Example use case: a GUI comparison tool creaks after being asked to show more than a
-    // certain number of image comparisons.
+    /*!
+     \brief Handle only up to a given number of failures. After that, just do nothing and return false.
+
+     Example use case: a GUI comparison tool creaks after being asked to show more than a
+     certain number of image comparisons.
+    */
     class FirstNFailuresReporter : public Reporter
     {
     public:

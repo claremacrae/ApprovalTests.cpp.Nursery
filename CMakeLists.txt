@@ -13,6 +13,7 @@ set(CMAKE_VERBOSE_MAKEFILE on)
 
 add_subdirectory(dependencies)
 add_subdirectory(ApprovalTestsNursery)
+add_subdirectory(doc)
 
 if (NURSERY_NOT_SUBPROJECT)
     enable_testing()

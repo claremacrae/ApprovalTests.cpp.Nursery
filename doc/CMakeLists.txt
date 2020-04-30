@@ -5,7 +5,7 @@ find_package(Sphinx REQUIRED)
 get_target_property(APPROVAL_TESTS_NURSERY_PUBLIC_HEADER_DIR ApprovalTestsNursery INTERFACE_INCLUDE_DIRECTORIES)
 file(GLOB_RECURSE APPROVAL_TESTS_NURSERY_PUBLIC_HEADERS ${APPROVAL_TESTS_NURSERY_PUBLIC_HEADER_DIR}/*.h)
 
-set(DOXYGEN_INPUT_DIR ${PROJECT_SOURCE_DIR}/CatCutifier)
+set(DOXYGEN_INPUT_DIR ${PROJECT_SOURCE_DIR}/ApprovalTestsNursery)
 set(DOXYGEN_OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/doxygen)
 set(DOXYGEN_INDEX_FILE ${DOXYGEN_OUTPUT_DIR}/xml/index.xml)
 set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
@@ -40,7 +40,7 @@ add_custom_command(OUTPUT ${SPHINX_INDEX_FILE}
         COMMAND
         ${SPHINX_EXECUTABLE} -b html
         # Tell Breathe where to find the Doxygen output
-        -Dbreathe_projects.ApprovalTestsNursery=${DOXYGEN_OUTPUT_DIR}/xml
+        -Dbreathe_projects.ApprovalTests.cpp.Nursery=${DOXYGEN_OUTPUT_DIR}/xml
         ${SPHINX_SOURCE} ${SPHINX_BUILD}
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
         DEPENDS

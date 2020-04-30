@@ -6,6 +6,11 @@
 Welcome to ApprovalTests.cpp.Nursery's documentation!
 =====================================================
 
+Purpose
+=======
+
+**ApprovalTests.cpp.Nursery** is a place to experiment with ideas for the `ApprovalTests.cpp <https://github.com/approvals/ApprovalTests.cpp>`_ library.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -21,6 +26,8 @@ Indices and tables
 
 Docs
 ====
+
+.. note:: All classes listed here are in the ``ApprovalTests`` namespace.
 
 .. doxygenclass:: ApprovalTests::FirstNFailuresReporter
 

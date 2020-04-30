@@ -23,7 +23,7 @@
 
 namespace ApprovalTests
 {
-    // A reporter which uses Catch CHECK statement to check the output
+    //! \brief A reporter which uses Catch CHECK statement to check the output
     class CatchReporter : public Reporter
     {
     public:

@@ -24,3 +24,6 @@ Docs
 
 .. doxygenclass:: ApprovalTests::FirstNFailuresReporter
    :members:
+
+.. doxygenclass:: ApprovalTests::CatchReporter
+   :members:

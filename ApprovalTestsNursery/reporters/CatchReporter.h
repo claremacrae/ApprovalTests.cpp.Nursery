@@ -23,7 +23,11 @@
 
 namespace ApprovalTests
 {
-    //! \brief A reporter which uses Catch CHECK statement to check the output
+    /*! \brief A reporter which uses Catch2 CHECK statement to check the output
+
+        \note This is only available if the Catch2 header was included before
+              the header file declaring this class.
+     */
     class CatchReporter : public Reporter
     {
     public:

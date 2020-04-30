@@ -1,5 +1,13 @@
-find_package(Doxygen REQUIRED)
-find_package(Sphinx REQUIRED)
+find_package(Doxygen)
+find_package(Sphinx)
+if (NOT Doxygen_FOUND)
+    message(STATUS "Doxygen not found: Will not generate docs)
+    return()
+endif ()
+if (NOT Sphinx_FOUND)
+    message(STATUS "Sphinx not found: Will not generate docs)
+    return()
+endif ()
 
 # Find all the public headers
 get_target_property(APPROVAL_TESTS_NURSERY_PUBLIC_HEADER_DIR ApprovalTestsNursery INTERFACE_INCLUDE_DIRECTORIES)

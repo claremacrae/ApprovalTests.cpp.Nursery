@@ -8,3 +8,5 @@
 
 A place to experiment with ideas for [ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp)
 
+See [API Documentation](https://approvaltestscppnursery.readthedocs.io/en/latest/).
+

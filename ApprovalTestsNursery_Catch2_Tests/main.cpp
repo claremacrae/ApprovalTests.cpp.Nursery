@@ -10,7 +10,7 @@
 
 using namespace ApprovalTests;
 
-auto directory = Approvals::useApprovalsSubdirectory("approval_tests");
+auto directoryDisposer = Approvals::useApprovalsSubdirectory("approval_tests");
 
 using namespace ApprovalTests;
 // If it's a CI machine, show differences as text in the console/log

@@ -21,13 +21,12 @@ project = 'ApprovalTests.cpp.Nursery'
 copyright = '2020, Clare Macrae'
 author = 'Clare Macrae'
 
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [ "breathe" ]
+extensions = ["breathe"]
 
 # Breathe Configuration
 breathe_default_project = "ApprovalTests.cpp.Nursery"
@@ -40,7 +39,6 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -58,8 +56,9 @@ html_static_path = ['_static']
 
 import subprocess, os
 
+
 def configureDoxyfile(input_dir, output_dir):
-    with open('Doxyfile.in', 'r') as file :
+    with open('Doxyfile.in', 'r') as file:
         filedata = file.read()
 
     filedata = filedata.replace('@DOXYGEN_INPUT_DIR@', input_dir)
@@ -67,6 +66,7 @@ def configureDoxyfile(input_dir, output_dir):
 
     with open('Doxyfile', 'w') as file:
         file.write(filedata)
+
 
 # Check if we're running on Read the Docs' servers
 read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'

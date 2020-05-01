@@ -58,13 +58,14 @@ import subprocess, os
 
 
 def configureDoxyfile(input_dir, output_dir):
-    with open('Doxyfile.in', 'r') as file:
+    print(">>>> configureDoxyfile ", os.getcwd())
+    with open('doxygen/Doxyfile.in', 'r') as file:
         filedata = file.read()
 
     filedata = filedata.replace('@DOXYGEN_INPUT_DIR@', input_dir)
     filedata = filedata.replace('@DOXYGEN_OUTPUT_DIR@', output_dir)
 
-    with open('Doxyfile', 'w') as file:
+    with open('doxygen/Doxyfile', 'w') as file:
         file.write(filedata)
 
 

@@ -57,17 +57,21 @@ html_static_path = []
 import subprocess, os
 
 
-def configureDoxyfile(input_dir, output_dir):
+def configureDoxyfile(doxygen_dir, input_dir, output_dir):
     print(">>>> configureDoxyfile ", os.getcwd())
-    with open('doxygen/Doxyfile.in', 'r') as file:
+    with open(doxygen_dir + '/Doxyfile.in', 'r') as file:
         filedata = file.read()
 
     filedata = filedata.replace('@DOXYGEN_INPUT_DIR@', input_dir)
     filedata = filedata.replace('@DOXYGEN_OUTPUT_DIR@', output_dir)
 
-    with open('doxygen/Doxyfile', 'w') as file:
+    with open(doxygen_dir + '/Doxyfile', 'w') as file:
         file.write(filedata)
 
+
+def check_dir(name, directory):
+    print(F">>>> {name} = {directory}")
+    assert(os.path.isdir(directory))
 
 # Check if we're running on Read the Docs' servers
 read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
@@ -75,8 +79,15 @@ read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
 breathe_projects = {}
 
 if read_the_docs_build:
-    input_dir = '../ApprovalTestsNursery'
-    output_dir = 'build'
-    configureDoxyfile(input_dir, output_dir)
+    input_dir = os.path.abspath('../../ApprovalTestsNursery')
+    check_dir('input_dir', input_dir)
+
+    output_dir = os.path.abspath('build')
+    print(F">>>> output_dir = {output_dir}")
+
+    doxygen_dir = os.path.abspath('../doxygen')
+    check_dir('doxygen_dir', doxygen_dir)
+
+    configureDoxyfile(doxygen_dir, input_dir, output_dir)
     subprocess.call('doxygen', shell=True)
     breathe_projects['ApprovalTests.cpp.Nursery'] = output_dir + '/xml'

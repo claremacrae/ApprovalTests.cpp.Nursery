@@ -1,11 +1,11 @@
 find_package(Doxygen)
 find_package(Sphinx)
 if (NOT Doxygen_FOUND)
-    message(STATUS "Doxygen not found: Will not generate docs)
+    message(STATUS "Doxygen not found: Will not generate docs")
     return()
 endif ()
 if (NOT Sphinx_FOUND)
-    message(STATUS "Sphinx not found: Will not generate docs)
+    message(STATUS "Sphinx not found: Will not generate docs")
     return()
 endif ()
 

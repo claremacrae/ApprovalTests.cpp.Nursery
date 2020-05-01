@@ -88,6 +88,13 @@ if read_the_docs_build:
     doxygen_dir = os.path.abspath('../doxygen')
     check_dir('doxygen_dir', doxygen_dir)
 
+    sphinx_dir = os.path.abspath('../sphinx')
+    check_dir('sphinx_dir', sphinx_dir)
+
     configureDoxyfile(doxygen_dir, input_dir, output_dir)
+
+    os.chdir(doxygen_dir)
     subprocess.call('doxygen', shell=True)
+    os.chdir(sphinx_dir)
+
     breathe_projects['ApprovalTests.cpp.Nursery'] = output_dir + '/xml'

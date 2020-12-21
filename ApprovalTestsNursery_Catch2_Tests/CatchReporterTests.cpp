@@ -2,6 +2,7 @@
 // Catch header must be included before using CatchReporter
 #include "reporters/CatchReporter.h"
 #include "ApprovalTests/Approvals.h"
+#include "core/ApprovalException.h"
 
 using namespace ApprovalTests;
 

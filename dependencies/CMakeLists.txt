@@ -14,16 +14,20 @@ endif()
 
 # -------------------------------------------------------------------
 # ApprovalTests.cpp
-FetchContent_Declare(ApprovalTests
-        GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
-        GIT_TAG master)
+if (NOT TARGET ApprovalTests)
+    FetchContent_Declare(ApprovalTests
+            GIT_REPOSITORY https://github.com/approvals/ApprovalTests.cpp.git
+            GIT_TAG master)
 
-FetchContent_MakeAvailable(ApprovalTests)
+    FetchContent_MakeAvailable(ApprovalTests)
+endif ()
 
 ## -------------------------------------------------------------------
 ## Catch2
-FetchContent_Declare(Catch2
-        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-        GIT_TAG v2.11.1)
+if (NOT TARGET Catch2)
+    FetchContent_Declare(Catch2
+            GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+            GIT_TAG v2.11.1)
 
-FetchContent_MakeAvailable(Catch2)
+    FetchContent_MakeAvailable(Catch2)
+endif ()

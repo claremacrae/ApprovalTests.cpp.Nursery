@@ -1,6 +1,6 @@
 <a id="top"></a>
 
-# Additions - to be moved to AppovalTests.cpp
+# Additions - to be moved to ApprovalTests.cpp
 
 toc
 

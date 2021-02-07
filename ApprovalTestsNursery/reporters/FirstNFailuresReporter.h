@@ -16,6 +16,12 @@ namespace ApprovalTests
     class FirstNFailuresReporter : public Reporter
     {
     public:
+        /*!
+           \brief Construct a FirstNFailuresReporter object
+           @param maximum_failures  The maximum number of times \a reporter will be launched
+           @param reporter          The Reporter to be used to indicate a verification failure.
+                                    Note: This class takes ownership of the Reporter object
+         */
         FirstNFailuresReporter(int maximum_failures, Reporter* reporter)
             : maximum_failures_(maximum_failures)
             , reporter_(std::unique_ptr<Reporter>(reporter))

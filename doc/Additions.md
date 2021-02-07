@@ -7,11 +7,12 @@ To change this file edit the source file and then execute ./run_markdown_templat
 
 <a id="top"></a>
 
-# Additions - to be moved to AppovalTests.cpp
+# Additions - to be moved to ApprovalTests.cpp
 
+<!-- toc -->
+<!-- endToc -->
 
-
-
+See contents of [ApprovalTestsNursery/](/ApprovalTestsNursery), and the [API Documentation](https://approvaltestscppnursery.readthedocs.io/en/latest/).
 
 ---
 

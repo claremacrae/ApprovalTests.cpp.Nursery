@@ -71,7 +71,14 @@ jobs:
             generator: '"Unix Makefiles" -DCMAKE_UNITY_BUILD=yes'
             relative_build_dir_path: ''
 
-          - job-name: 'gcc10 ninja'
+          - job-name: 'gcc10 ninja in-source'
+            os-version: '20.04'
+            c-compiler: 'gcc-10'
+            cxx-compiler: 'g++-10'
+            generator: '"Ninja"'
+            relative_build_dir_path: ''
+
+          - job-name: 'gcc10 ninja out-of-source'
             os-version: '20.04'
             c-compiler: 'gcc-10'
             cxx-compiler: 'g++-10'
@@ -95,20 +102,7 @@ jobs:
       - uses: seanmiddleditch/gha-setup-ninja@v3
         if: contains(matrix.generator, 'Ninja')
 
-      - name: configure
-        run: |
-          mkdir $BUILD_PATH
-          cd $BUILD_PATH
-          cmake --version
-          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
-      - name: build
-        run: |
-          cd $BUILD_PATH
-          cmake --build . --parallel 4
-      - name: test
-        run: |
-          cd $BUILD_PATH
-          ctest --verbose --output-on-failure -C Debug
+      - uses: ./.github/actions/build-and-test
 
   macOS:
     needs: clang-format
@@ -138,7 +132,13 @@ jobs:
             generator: '"Unix Makefiles"'
             relative_build_dir_path: ''
 
-          - job-name: xcode-12.4-ninja
+          - job-name: 'xcode-12.4-ninja in-source'
+            xcode-version: '12.4'
+            os-version: '10.15'
+            generator: '"Ninja"'
+            relative_build_dir_path: ''
+
+          - job-name: 'xcode-12.4-ninja out-of-source'
             xcode-version: '12.4'
             os-version: '10.15'
             generator: '"Ninja"'
@@ -156,20 +156,7 @@ jobs:
       - uses: seanmiddleditch/gha-setup-ninja@v3
         if: contains(matrix.generator, 'Ninja')
 
-      - name: configure
-        run: |
-          mkdir $BUILD_PATH
-          cd $BUILD_PATH
-          cmake --version
-          cmake -G ${{ matrix.generator }} ${{ github.workspace }} -DCMAKE_BUILD_TYPE=Debug
-      - name: build
-        run: |
-          cd $BUILD_PATH
-          cmake --build . --parallel 4
-      - name: test
-        run: |
-          cd $BUILD_PATH
-          ctest --verbose --output-on-failure -C Debug
+      - uses: ./.github/actions/build-and-test
 
   Windows:
     needs: clang-format
@@ -197,6 +184,10 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
+      # DOS paths - with backslashes - are not compatible with the github bash
+      # shell that is invoked in build-and-test/actions.yml - so sadly the code
+      # in that file is pasted in here
+      # - uses: ./.github/actions/build-and-test
       - name: configure
         run: |
           mkdir ${{ env.BUILD_PATH }}

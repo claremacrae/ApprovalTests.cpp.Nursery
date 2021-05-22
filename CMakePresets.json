@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "cmakeMinimumRequired": {
     "major": 3,
     "minor": 19,
@@ -7,7 +7,7 @@
   },
   "configurePresets": [
     {
-      "name": "ci-base",
+      "name": "ci-config-base",
       "hidden": true,
       "binaryDir": "${sourceDir}/cmake-build-spaces/${presetName}"
     },
@@ -35,7 +35,7 @@
     {
       "name": "ci-clang",
       "inherits": [
-        "ci-base",
+        "ci-config-base",
         "ci-compiler-clang",
         "ci-generator-unix-makefiles"
       ]
@@ -43,10 +43,20 @@
     {
       "name": "ci-gcc",
       "inherits": [
-        "ci-base",
+        "ci-config-base",
         "ci-compiler-gcc",
         "ci-generator-unix-makefiles"
       ]
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "ci-clang",
+      "configurePreset": "ci-clang"
+    },
+    {
+      "name": "ci-gcc",
+      "configurePreset": "ci-gcc"
     }
   ]
 }

@@ -58,5 +58,15 @@
       "name": "ci-gcc",
       "configurePreset": "ci-gcc"
     }
+  ],
+  "testPresets": [
+    {
+      "name": "ci-clang",
+      "configurePreset": "ci-clang"
+    },
+    {
+      "name": "ci-gcc",
+      "configurePreset": "ci-gcc"
+    }
   ]
 }

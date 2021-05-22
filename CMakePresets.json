@@ -62,10 +62,16 @@
   "testPresets": [
     {
       "name": "ci-clang",
+      "output": {
+        "outputOnFailure": true
+      },
       "configurePreset": "ci-clang"
     },
     {
       "name": "ci-gcc",
+      "output": {
+        "outputOnFailure": true
+      },
       "configurePreset": "ci-gcc"
     }
   ]

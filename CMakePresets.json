@@ -51,11 +51,23 @@
   ],
   "buildPresets": [
     {
+      "name": "ci-build-base",
+      "configurePreset": "ci-config-base",
+      "hidden": true,
+      "jobs": 4
+    },
+    {
       "name": "ci-clang",
+      "inherits": [
+        "ci-build-base"
+      ],
       "configurePreset": "ci-clang"
     },
     {
       "name": "ci-gcc",
+      "inherits": [
+        "ci-build-base"
+      ],
       "configurePreset": "ci-gcc"
     }
   ],

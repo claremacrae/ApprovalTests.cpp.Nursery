@@ -61,17 +61,25 @@
   ],
   "testPresets": [
     {
-      "name": "ci-clang",
+      "name": "ci-test-base",
+      "configurePreset": "ci-config-base",
+      "hidden": true,
       "output": {
         "outputOnFailure": true
-      },
+      }
+    },
+    {
+      "name": "ci-clang",
+      "inherits": [
+        "ci-test-base"
+      ],
       "configurePreset": "ci-clang"
     },
     {
       "name": "ci-gcc",
-      "output": {
-        "outputOnFailure": true
-      },
+      "inherits": [
+        "ci-test-base"
+      ],
       "configurePreset": "ci-gcc"
     }
   ]

@@ -33,11 +33,24 @@
       "generator": "Unix Makefiles"
     },
     {
+      "name": "ci-generator-ninja",
+      "hidden": true,
+      "generator": "Ninja"
+    },
+    {
       "name": "ci-clang",
       "inherits": [
         "ci-config-base",
         "ci-compiler-clang",
         "ci-generator-unix-makefiles"
+      ]
+    },
+    {
+      "name": "ci-clang-ninja",
+      "inherits": [
+        "ci-config-base",
+        "ci-compiler-clang",
+        "ci-generator-ninja"
       ]
     },
     {
@@ -64,6 +77,13 @@
       "configurePreset": "ci-clang"
     },
     {
+      "name": "ci-clang-ninja",
+      "inherits": [
+        "ci-build-base"
+      ],
+      "configurePreset": "ci-clang-ninja"
+    },
+    {
       "name": "ci-gcc",
       "inherits": [
         "ci-build-base"
@@ -86,6 +106,13 @@
         "ci-test-base"
       ],
       "configurePreset": "ci-clang"
+    },
+    {
+      "name": "ci-clang-ninja",
+      "inherits": [
+        "ci-test-base"
+      ],
+      "configurePreset": "ci-clang-ninja"
     },
     {
       "name": "ci-gcc",

@@ -71,23 +71,17 @@
     },
     {
       "name": "ci-clang",
-      "inherits": [
-        "ci-build-base"
-      ],
+      "inherits": "ci-build-base",
       "configurePreset": "ci-clang"
     },
     {
       "name": "ci-clang-ninja",
-      "inherits": [
-        "ci-build-base"
-      ],
+      "inherits": "ci-build-base",
       "configurePreset": "ci-clang-ninja"
     },
     {
       "name": "ci-gcc",
-      "inherits": [
-        "ci-build-base"
-      ],
+      "inherits": "ci-build-base",
       "configurePreset": "ci-gcc"
     }
   ],
@@ -102,23 +96,17 @@
     },
     {
       "name": "ci-clang",
-      "inherits": [
-        "ci-test-base"
-      ],
+      "inherits": "ci-test-base",
       "configurePreset": "ci-clang"
     },
     {
       "name": "ci-clang-ninja",
-      "inherits": [
-        "ci-test-base"
-      ],
+      "inherits": "ci-test-base",
       "configurePreset": "ci-clang-ninja"
     },
     {
       "name": "ci-gcc",
-      "inherits": [
-        "ci-test-base"
-      ],
+      "inherits": "ci-test-base",
       "configurePreset": "ci-gcc"
     }
   ]

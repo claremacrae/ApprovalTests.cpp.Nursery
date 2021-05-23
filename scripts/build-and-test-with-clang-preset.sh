@@ -2,8 +2,10 @@
 
 # Must be run from the root of the project
 
+CMAKE_DIR=/Applications/CMake.app/Contents/bin
+
 PRESET=$1
-#/Applications/CMake.app/Contents/bin/cmake --list-presets
-/Applications/CMake.app/Contents/bin/cmake -S `pwd` --preset=$PRESET
-/Applications/CMake.app/Contents/bin/cmake --build  --preset=$PRESET
-/Applications/CMake.app/Contents/bin/ctest          --preset=$PRESET
+#$CMAKE_DIR/cmake --list-presets
+$CMAKE_DIR/cmake -S `pwd` --preset=$PRESET
+$CMAKE_DIR/cmake --build  --preset=$PRESET
+$CMAKE_DIR/ctest          --preset=$PRESET
